@@ -1,0 +1,367 @@
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+
+body{
+	background-color:white;
+       
+       
+}
+
+}
+#navigationMenu{
+            position: relative;
+            bottom: 1em;
+            
+                    }
+#navigationMenu li{
+	list-style:none;
+	height:2.647em;
+	padding:0.176em;
+	width:2.706em;
+        margin-bottom: 0.765em;
+        position: relative;
+        bottom: 2.353em;
+        right: 0.294em;
+            
+        }
+        
+
+#navigationMenu span{
+	/* Container properties */
+	width: 0;
+	left:2.520em;
+	padding:0;
+	position:absolute;
+	overflow:hidden;
+        border-radius: 0.300em;
+        
+            
+
+	/* Text properties */
+	font-family: Raleway;
+	font-size:1.563em;
+	
+	letter-spacing:0.024em;
+	white-space:nowrap;
+	line-height:1.560em;
+	
+	/* CSS3 Transition: */
+	-webkit-transition: 0.25s;
+	
+	/* Future proofing (these do not work yet): */
+	-moz-transition: 0.25s;
+	transition: 0.25s;
+}
+
+#navigationMenu a{
+	height:3.125em;
+	width:4.375em;
+	display:block;
+	position:relative;
+        background-repeat: no-repeat;
+        color: #4C4C59;
+        
+}
+
+/* General hover styles */
+
+#navigationMenu a:hover span{ height: 2.000em; width:3.400em; padding:0 1.000em;overflow:visible; }
+#navigationMenu a:hover{
+	text-decoration:none;
+	
+	
+	
+}
+
+
+
+#navigationMenu .about {background-image: url(Images/about.png);background-position:-.188em 0;}
+#navigationMenu .about:hover {background-image: url(Images/about.png);background-position:-.188em 0;}
+#navigationMenu .about span:hover{
+	background-color:#ffe158;
+	color:#4c4c59;
+        width: 2.2em;
+        }
+
+
+
+
+#navigationMenu .cv { background-image: url(Images/cv.png);background-position:0 0;}
+#navigationMenu .cv:hover { background-image: url(Images/cv.png); }
+#navigationMenu .cv span:hover{
+	background-color:#ffe158;
+	color:#4c4c59;
+        width: .9em;
+              
+}
+
+
+
+#navigationMenu .research { background-image: url(Images/research.png);background-position:0 0em; background-size:}
+#navigationMenu .research:hover { background-image: url(Images/research.png);}
+#navigationMenu .research span:hover{
+	background-color:#ffe158;
+	color:#4c4c59;
+        width: 4em;
+        
+}
+
+
+
+#navigationMenu .teaching { background-image: url(Images/teaching.png);background-position:-.688em -.625em;}
+#navigationMenu .teaching:hover{ background-image: url(Images/teaching.png);}
+#navigationMenu .teaching span:hover{
+	background-color:#ffe158;
+        color: #4c4c59;
+        width: 3.94em;
+}
+
+#navigationMenu .blog {background-image: url(Images/blog.png);background-position: 0em -.938em}
+#navigationMenu .blog:hover {background-image: url(Images/blog.png);background-position:0em -.938em;}
+#navigationMenu .blog span:hover{
+	background-color:#ffe158;
+	color:#4c4c59;
+        width: 3.2em;
+        }
+
+
+
+
+a, a:visited,a:active {
+	color:#0196e3;
+	text-decoration:none;
+	outline:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+a img{
+	border:none;
+}
+
+/*main text properties*/
+
+div.textabout{
+        position: relative;
+    right: -23em;
+    bottom: 25em;
+    letter-spacing: .059em;
+    font-family: Raleway;
+    font-size: 1.1em;
+    line-height: 1.65em;
+}
+
+div.textresearch{
+        position: relative;
+    right: -23em;
+    bottom: 25em;
+    letter-spacing: .059em;
+    font-family: Raleway;
+    font-size: 1.1em;
+    line-height: 1.65em;
+}
+div.textcontact{
+        position: relative;
+		right: -35em;
+    bottom: 25em;   
+    letter-spacing: .059em;
+    font-family: Raleway;
+    font-size: 1.1em;
+    line-height: 1.65em;
+}
+div.maintext{
+            position: relative;
+           
+    right: -21em;
+    bottom: 26em;
+    letter-spacing: .059em;
+    font-family: garamond;    
+    font-size: 1.1em;
+    line-height: 1.65em;
+    padding-left: 1em;
+   padding-top: .5em;
+   border-radius: .3em;
+}
+p.hometext{
+    position: relative;
+    right: -23em;
+    bottom: 16em;
+    letter-spacing: .059em;
+    font-family: garamond;
+    font-size: 1.063em;
+    line-height: 1.65em;
+}
+div.cv{
+    position: relative;
+    right: -21em;
+    bottom: 25em;
+    letter-spacing: .059em;
+    font-face: Raleway;
+    font-size: 1.1em;
+    line-height: 1.65em;
+    padding-left:1em;
+	color: #4c4c59;
+}
+div.textteaching{
+    position: relative;
+    right: -21em;
+    bottom: 25em;
+    letter-spacing: .059em;
+    font-family: Raleway;
+    font-size: 1.1em;
+    line-height: 1.65em;
+}
+div.footer{
+    position: inherit;
+    left: 54em;
+    font-family: garamond;
+    font-size: 1.3em;
+    z-index: 1;
+   
+    
+}
+
+
+
+.horizontal { display: inline; border-left: 0.14em solid; color:#FFCC00; padding-left: 0.6em; padding-right: 0.2em}
+.first { border-left: none; padding-left: 0; position: relative; bottom: .3em; left: .2em}
+
+div.footerline{
+    background-color:
+ 
+ 
+/* current page button spans */   
+}  p.currentabout{
+    border-style: solid;
+    border-color: #ffe158;
+    background-color:#ffe158;
+    color: white;
+    width: 3.9em;
+    height: 1.76em;
+    font-family: Raleway;
+    font-size: 1.563em;
+    position: relative;
+    left: 4.04em;
+    bottom: 13.94em;
+    border-radius: 0.3em;
+    text-align: right;}
+
+p.text{
+    color: #4c4c59;
+    width: 3.68em;
+    height: 1.76em;
+    font-family: Raleway;
+    font-size: 1.563em;  
+    position: relative;
+    left: 5.04em;
+    bottom: 16.79em;
+    letter-spacing:0.024em;
+    }
+ p.currentcv{
+    border-style: solid;
+    border-color: #ffe158;
+    background-color: #ffe158; 
+    color: #FFCC00;
+    width: 4em;
+    height: 2.75em;
+    position: relative;
+    left: 6.5em;
+    bottom: 17.5em;
+    border-radius: 0.4em;
+     }
+	p.cvtext{
+    color: #4c4c59;
+    width: 5.75em;
+    height: 2.75em;
+    font-family: Raleway;
+    font-size: 1.563em;  
+    position: relative;
+    left: 5.05em;
+    bottom: 14.02em;
+    letter-spacing:0.024em;
+    }
+	p.currentresearch{
+    border-style: solid;
+    border-color: #ffe158;
+    background-color:#ffe158;
+    color: white;
+    width: 5.77em;
+    height: 1.76em;
+    font-family: garamond;
+    font-size: 1.563em;
+    position: relative;
+    left: 4.04em;
+    bottom: 9.11em;
+    border-radius: 0.3em;
+    text-align: right;
+    }
+	
+	
+    p.textresearch{
+    color: #4c4c59;
+    width: 3.68em;
+    height: 1.76em;
+    font-family: Raleway;
+    font-size: 1.563em;  
+    position: relative;
+    left: 5.03em;
+    bottom: 11.93em;
+    letter-spacing:.024em;
+    }
+	
+	p.currentteaching{
+    border-style: solid;
+    border-color: #ffe158;
+    background-color:#ffe158;
+    color: white;
+    width: 5.7em;
+    height: 1.76em;
+    font-family: garamond;
+    font-size: 1.563em;
+    position: relative;
+    left: 4.04em;
+    bottom: 6.7em;
+    border-radius: 0.3em;
+    text-align: right;}
+    
+	
+    p.textteaching{
+    color: #4c4c59;
+    width: 3.68em;
+    height: 1.76em;
+    font-family: Raleway;
+    font-size: 1.563em;  
+    position: relative;
+    left: 5.04em;
+    bottom: 9.55em;
+    letter-spacing:0.024em;
+    }
+	/* from 4.28 width */
+	 p.currentcontact{
+    border-style: solid;
+    border-color: #ffe158;
+    background-color:#ffe158;
+    color: white;
+    width: 4.95em;
+    height: 1.76em;
+    font-family: garamond;
+    font-size: 1.563em;
+    position: relative;
+    left: 4.04em;
+    bottom: 4.3em;
+    border-radius: 0.3em;
+    text-align: right;}
+    
+    p.textcontact{
+    color: #4c4c59;
+    width: 3.68em;
+    height: 1.76em;
+    font-family: Raleway;
+    font-size: 1.563em;  
+    position: relative;
+    left: 5.04em;
+    bottom: 7.15em;
+    letter-spacing:0.024em;
+    }
