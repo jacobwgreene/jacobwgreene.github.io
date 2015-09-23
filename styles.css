@@ -171,18 +171,21 @@ div.textcontact{
     font-size: 1.1em;
     line-height: 1.65em;
 }
-div.maintext{
-            position: relative;
-           
-    right: -21em;
-    bottom: 26em;
+div.maintexthome{
+    position: relative;           
+    right: -18em;
+    bottom: 25em;
     letter-spacing: .059em;
-    font-family: garamond;    
+    font-family: Raleway;    
     font-size: 1.1em;
     line-height: 1.65em;
     padding-left: 1em;
-   padding-top: .5em;
-   border-radius: .3em;
+    padding-top: .5em;
+	padding-right: 5em;
+    border-radius: .3em;
+	color: #4c4c59;
+	width:40em;
+    word-wrap: break-word;
 }
 p.hometext{
     position: relative;
@@ -193,9 +196,9 @@ p.hometext{
     font-size: 1.063em;
     line-height: 1.65em;
 }
-div.cv{
+div.maintextcv{
     position: relative;
-    right: -21em;
+    right: -18em;
     bottom: 25em;
     letter-spacing: .059em;
     font-face: Raleway;
@@ -203,6 +206,8 @@ div.cv{
     line-height: 1.65em;
     padding-left:1em;
 	color: #4c4c59;
+	width:40em;
+    word-wrap: break-word;
 }
 div.textteaching{
     position: relative;
