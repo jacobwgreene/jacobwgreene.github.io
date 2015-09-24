@@ -143,34 +143,6 @@ a img{
 
 /*main text properties*/
 
-div.textabout{
-        position: relative;
-    right: -23em;
-    bottom: 25em;
-    letter-spacing: .059em;
-    font-family: Raleway;
-    font-size: 1.1em;
-    line-height: 1.65em;
-}
-
-div.textresearch{
-        position: relative;
-    right: -23em;
-    bottom: 25em;
-    letter-spacing: .059em;
-    font-family: Raleway;
-    font-size: 1.1em;
-    line-height: 1.65em;
-}
-div.textcontact{
-        position: relative;
-		right: -35em;
-    bottom: 25em;   
-    letter-spacing: .059em;
-    font-family: Raleway;
-    font-size: 1.1em;
-    line-height: 1.65em;
-}
 div.maintexthome{
     position: relative;           
     right: -18em;
@@ -187,15 +159,6 @@ div.maintexthome{
 	width:40em;
     word-wrap: break-word;
 }
-p.hometext{
-    position: relative;
-    right: -23em;
-    bottom: 16em;
-    letter-spacing: .059em;
-    font-family: garamond;
-    font-size: 1.063em;
-    line-height: 1.65em;
-}
 div.maintextcv{
     position: relative;
     right: -18em;
@@ -209,19 +172,91 @@ div.maintextcv{
 	width:40em;
     word-wrap: break-word;
 }
-div.textteaching{
+div.maintextresearch{
     position: relative;
-    right: -21em;
+    right: -18em;
+    bottom: 25em;
+    letter-spacing: .059em;
+    font-family:Raleway;
+    font-size: 1.1em;
+    line-height: 1.65em;
+    padding-left:1em;
+	color: #4c4c59;
+	width:40em;
+    word-wrap: break-word;
+}
+div.researchabstracts{
+    position: relative;
+    right: -22em;
+    bottom: 25em;
+    letter-spacing: .059em;
+    font-family:Raleway;
+    font-size: 1.1em;
+    line-height: 1.65em;
+    padding-left:1em;
+	color: #4c4c59;
+	width:40em;
+    word-wrap: break-word;
+}
+
+div.tablechartstyle{
+    position: relative;
+    right: -7em;
+    bottom: 25em;
+	letter-spacing: .059em;
+    font-family:Raleway;
+    font-size: 1.1em;
+    line-height: 1.65em;
+    padding-left:1em;
+	color: #4c4c59;
+	width:60em;
+    word-wrap: break-word;
+}
+
+div.maintextteaching{
+    position: relative;
+    right: -18em;
     bottom: 25em;
     letter-spacing: .059em;
     font-family: Raleway;
     font-size: 1.1em;
     line-height: 1.65em;
+	color: #4c4c59;
+	width:40em;
+    word-wrap: break-word;
+	  padding-left:1em;
 }
+div.maintextcontact{
+    position: relative;
+	right: -18em;
+    bottom: 25em;   
+    letter-spacing: .059em;
+    font-family: Raleway;
+    font-size: 1.1em;
+    line-height: 1.65em;
+	color: #4c4c59;
+	width:40em;
+    word-wrap: break-word;
+	padding-left:1em;
+}
+
+
+
+p.hometext{
+    position: relative;
+    right: -23em;
+    bottom: 16em;
+    letter-spacing: .059em;
+    font-family: garamond;
+    font-size: 1.063em;
+    line-height: 1.65em;
+}
+
+
 div.footer{
     position: inherit;
     left: 54em;
-    font-family: garamond;
+    font-family: Raleway;
     font-size: 1.3em;
     z-index: 1;
    

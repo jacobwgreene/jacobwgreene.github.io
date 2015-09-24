@@ -1,0 +1,255 @@
+<!doctype html>
+    <html>
+<head>
+   
+   
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      
+      google.load('visualization', '1.1', {'packages':['table', 'controls', 'corechart', 'map']});
+      
+      google.setOnLoadCallback(drawCharts);
+      
+        function drawCharts() {
+      var queryString = encodeURIComponent('SELECT B, C, G, E, F, H, I, J, K, M, N, R, S');
+
+      var query = new google.visualization.Query(
+          'https://docs.google.com/spreadsheets/d/1sg6r1fvHdjIQj_LSy1ZL0axg0BEHCjXb9Sxzz9jLlqw/gviz/tq?sheet=Form1&headers=1&tq=' + queryString);
+      query.send(handleSampleDataQueryResponse);
+    }
+
+    function handleSampleDataQueryResponse(response) {
+      if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+      
+      var data = response.getDataTable();
+      
+      
+var dashboard = new google.visualization.Dashboard(
+  document.getElementById('dashboard_div'));
+
+    //create the date filter for table chart
+  var DateFilter = new google.visualization.ControlWrapper({
+          'controlType': 'DateRangeFilter',
+          'containerId': 'datefilter_div',
+          'options': {
+            'filterColumnLabel': 'Date',
+            'ui': {format: 'short'}            
+          }                  
+      });
+  
+  //create the string filter for media
+  var StringFilterMedia = new google.visualization.ControlWrapper({
+          'controlType': 'StringFilter',
+          'containerId': 'stringfiltermedia_div',
+          'options': {
+            'filterColumnLabel': 'Media',
+            'matchType': 'any'            
+          }                  
+      });
+  
+  //create the string filter for genre
+  var StringFilterGenre = new google.visualization.ControlWrapper({
+          'controlType': 'StringFilter',
+          'containerId': 'stringfiltergenre_div',
+          'options': {
+            'filterColumnLabel': 'Genre',
+            'matchType': 'any'            
+          }                  
+      });
+  
+  // create the table Chart       
+         var tableChart = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'chart_div',
+          'options': {
+            'width':1000,
+            'height': 400,
+            'legend': 'right',
+            'showRowNumber': 'true,'
+          },
+          'view': {'columns': [0,1,2,7,9]}
+        });         
+                              
+        /* create the pie Chart       
+         var pieChart = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'piechart_div',
+          'options': {
+            'width':500,
+            'height': 400,
+            'title': 'Site Specific'
+          },
+          'view': {'columns': [3]}
+        }); */
+         
+         dashboard.bind([DateFilter, StringFilterMedia, StringFilterGenre], tableChart);
+         
+         dashboard.draw(data);
+      
+    }
+   
+   /*map script*/
+   google.setOnLoadCallback(drawMap);
+      
+        function drawMap() {
+      var queryString = encodeURIComponent('SELECT P,Q,L');
+
+      var query = new google.visualization.Query(
+          'https://docs.google.com/spreadsheets/d/1sg6r1fvHdjIQj_LSy1ZL0axg0BEHCjXb9Sxzz9jLlqw/gviz/tq?sheet=Form1&headers=1&tq=' + queryString);
+      query.send(handleMap);
+    }
+
+    function handleMap(response) {
+      if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+      
+      var data = response.getDataTable();
+
+      var options = {
+        showTip: true,
+        enableScrollWheel: true,
+        mapType: 'normal',
+        useMapTypeControl: true,
+        showTip: true,
+      }
+      
+ //create Map
+      var chart = new google.visualization.Map(document.getElementById('map_div'));
+      chart.draw(data, options);
+      
+    }
+   /* pie chart script*/
+    google.setOnLoadCallback(drawPie);
+      
+        function drawPie() {
+      var queryString = encodeURIComponent('SELECT T, U');
+
+      var query = new google.visualization.Query(
+          'https://docs.google.com/spreadsheets/d/1sg6r1fvHdjIQj_LSy1ZL0axg0BEHCjXb9Sxzz9jLlqw/gviz/tq?sheet=Form1&headers=1&tq=' + queryString);
+      query.send(handlePie);
+    }
+
+    function handlePie(response) {
+      if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+      
+      var data = response.getDataTable();
+
+      var options = {
+        
+        width: 500,
+        height: 400,
+        is3D: true,
+        
+      }
+      
+ //create pie chart
+      var chart = new google.visualization.PieChart(document.getElementById('piechart_div'));
+      chart.draw(data, options);
+      
+    }
+   
+    </script>
+   <link rel="shortcut icon" href="../Images/favicon.ico">
+    <meta charset="utf-8" />
+    <link href="../styles.css" rel="stylesheet">
+	
+        <title>Research</title>
+<style>
+    
+    html, body {
+                max-width: 100%;
+				overflow-x: hidden;
+				margin: 0;
+                padding: 0;
+                 }
+				 
+	
+</style>
+
+</head>
+<div id="container">
+<body>    
+ </div>
+   
+    <p style= "position: relative; right: 1em; bottom: 3em"><a href="../index.html"><img src="../Images/initials6.png"></a></p>         
+
+    <ul id="navigationMenu">
+    <li>
+        <a class="about" href="../index.html">
+            <span>About</span>
+        </a>
+    </li>
+
+    <li>
+    	<a class="cv" href="../CV/cv.html">
+            <span>CV</span>
+        </a>
+    </li>
+
+    <li>
+         <a class="research" href="research.html">
+            <span>Research</span>
+         </a>
+    </li>
+
+    <li>
+    	<a class="teaching" href="../Teaching/teaching_homepage.html">
+            <span>Teaching</span>
+        </a>
+    </li>
+
+    <li>
+    	<a class="blog" href="../Blog/blog.html">
+            <span>Contact</span>
+        </a>
+    </li>
+    </ul>
+<p class="currentresearch">
+ <p class="textresearch">Research</p>
+</p>
+
+<div class="maintextresearch">
+    <h3>Counter-Rhetorics of Augmented Reality</h3>
+	
+	<p><u>Theoretical Rationale</u></p>
+	
+	<p>For part of my research into augmented reality (AR) as an emerging writing technology, I am tracing different activist/artistic projects that configure AR as a counter-rhetorical genre. My theoretical approach for this research emerges partially from Clay Spinuzzi's claim that new genres emerge out of "destabilizations" between existing genres and the actor's rhetorical purpose. For Spinuzzi, such destabilizations force writers “not only to reinterpret existing genres, but also to adapt new genres” (<i>Tracing Genres</i>, 67). Spinuzzi writes that a genre should be studied not at a specific period in time but rather “as it develops over a period of months or years.” In order to trace the diachronic development of AR as a counter-rhteorical genre, I draw from Laurie Gries' methodology of "iconographic tracking." Gries' method advocates for a productive dialectic between “data hoarding” (collecting data through web and image searches) and “data mining” (analyzing this data for patterns and trends) so that a researcher’s understanding of a particular cultural phenomenon is constantly informed by the movement of the phenomenon itself and not just the initial concerns of the researcher. </p>
+	
+	<p><u>Data</u></p>
+	
+	<p>Use the filters below  to sort the data according genre (counter, participatory, dissonant, informative, dynamic, interactive, or biofeedback), media (image, video, text, or 3D), or date. You can access my raw data <a href="https://docs.google.com/spreadsheets/d/1sg6r1fvHdjIQj_LSy1ZL0axg0BEHCjXb9Sxzz9jLlqw/edit#gid=355506678">here</a>, or <a href="https://docs.google.com/forms/d/1WxGzoku1jYOTDNaRH0TtjvoDd7gIplMFF61f4LXpMGc/viewform?usp=send_form">submit an interventionist AR project</a> that you don't see listed in the table and it will be added automatically.</p>
+	
+	 <div id="dashboard_div"></div>
+   
+    
+    <!--<div id="sitefilter_div" style="padding: 1em"></div>-->
+    
+        
+    <!--<div id="piechart_div"></div>-->
+	
+</div>
+
+<div class="tablechartstyle">
+      <p><b>Augmented Reality Interventions</b></p>
+	  <div id="stringfiltergenre_div" style="padding: 1em"></div>
+	  <div id="stringfiltermedia_div" style="padding: 1em"></div>
+	  <div id="datefilter_div" style="padding: 1em"></div>
+	  <div id="chart_div"></div>
+	 <p><b>Site-Specific AR Interventions</b></p>
+	 <div id="map_div" style="width: 900px; height: 500px"></div>
+	 <p><b>Interactive AR Interventions</b></p>
+	 <div id="piechart_div"></div>
+</div>
+
+</body>       
+        
+        
+    </html>
