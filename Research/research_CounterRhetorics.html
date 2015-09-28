@@ -201,32 +201,47 @@ var dashboard = new google.visualization.Dashboard(
        
 </head>
 <body>
-<p style= "position: relative; right: 1em; bottom: 3.6em"><a href="../index.html"><img src="../Images/initials6.png"></a></p>
+<!--banner image scale with screen size-->
+   <div id="banner">>
+      <div id="wrapper">
+         <div id="container">
+            <a href="../index.html"><img class="banner-img" src="../Images/initials6.png"></a>
+         </div
+      </div>
+   </div>
 <div id='cssmenu'>
 <ul>
-   <li><a href='../index.html'><span>About</span></a></li>
+   <li ><a href='../index.html'><span>About</span></a></li>
    <li class='active'><a href='research.html'><span>Research</span></a>
       <ul>
          <li class='has-sub'><a href='#'><span>Recent</span></a>
             <ul>
-               <li><a href='research_AR.html'><span>AR Projects</span></a></li>
-               <li class='last'><a href='research_CounterRhetorics.html'><span>Counter-Rhetorics</span></a></li>
+               <li><a href="http://trace.english.ufl.edu/projects/arcs/seeworld/"><span>SeeWorld</span></a></li>
+               <li class='last'><a href='../Research/research_CounterRhetorics.html'><span>Counter-Rhetorics</span></a></li>
             </ul>
          </li>
-         <li><a href='www.augmentedwriting.org'><span>Blog</span></a>           
+         <li><a href='http://www.augmentedwriting.org'><span>Blog</span></a>           
             
          </li>
       </ul>
-   </li>
-   <li><a href='../CV/cv.html'><span>CV</span></a></li>
-   <li class='last'><a href='../Contact/contact.html'><span>Contact</span></a></li>
+   </li>   
+   <li><a href='../Teaching/coursedesigns.html'><span>Teaching</span></a>
+      <ul>
+         <li><a href='../Teaching/coursedesigns.html'><span>Designed Courses</span></a>   
+          <li class='last'><a href='../Teaching/teachingphilosophy.html'><span>Teaching Philosophy</span></a></li>
+
+      </ul>
+    </li>  
+      
+   <li class='last'><a href='../CV/cv.html'><span>CV</span></a></li>
+   
 </ul>
 </div>
 
 <div class= "maintextresearch">
  
 <h3>Counter-Rhetorics of Augmented Reality</h3>
-	<p style="font-size: .8em">"...distance is however not an obstacle, but <i>a specific form of knowledge</i>" <br>-Franco Moretti, <i>Graphs, Maps, Trees</i></p>
+	<p style="font-size: .8em">"...distance is however not an obstacle, but a specific form of knowledge" <br>-Franco Moretti, <i>Graphs, Maps, Trees</i></p>
 	
 	
 	
@@ -249,7 +264,7 @@ var dashboard = new google.visualization.Dashboard(
 
 
 
-      <p><b>Augmented Reality Interventions</b></p>
+      <p><b>Interactive Data Table</b></p>
 	  <div id="stringfiltergenre_div" style="padding: 1em"></div>
 	  <div id="stringfiltermedia_div" style="padding: 1em"></div>
 	  <div id="datefilter_div" style="padding: 1em"></div>

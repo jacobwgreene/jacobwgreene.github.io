@@ -9,8 +9,10 @@
   line-height: 1;
   display: block;
   position: relative;
-  font-family: 'PT Sans', sans-serif;
-  bottom: 5em;
+  font-family: Raleway;
+  bottom: 4em;
+  opacity: 0.85;
+  
 }
 #cssmenu ul {
   list-style: none;
@@ -26,6 +28,7 @@
   height: 0;
   clear: both;
   visibility: hidden;
+  
 }
 #cssmenu ul li {
   margin: 0;
@@ -261,6 +264,7 @@ div.maintextresearch{
     font-size: 1.1em;
     display: block;
     margin-top: .5em;
+    margin-bottom: 10em;
 }
 
 img.center{
@@ -275,11 +279,29 @@ img.left{
 
 a{
    color: #4c4c59;
-   text-decoration: none;
+   text-decoration: underline;
 }
 
 a:hover{
    color: #4cb6ea;
+}
+
+div.wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+div.container {
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+.banner-img{
+    width: 100%;
+    position: relative;
+    right: 1em;
+    bottom: 3.6em;
 }
 
 @media all and (max-width: 800px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
