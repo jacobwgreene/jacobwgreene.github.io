@@ -286,6 +286,8 @@ a:hover{
    color: #4cb6ea;
 }
 
+/*banner image*/
+
 div.wrapper {
     width: 100%;
     overflow: hidden;
@@ -302,6 +304,11 @@ div.container {
     position: relative;
     right: 1em;
     bottom: 3.6em;
+}
+
+p.center{
+  display: block;
+    left: -5em;  
 }
 
 @media all and (max-width: 800px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
