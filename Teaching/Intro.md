@@ -264,7 +264,7 @@ To create an XCode project in Unity, go to "File > Build Settings" and switch yo
 
 Open your project in Xcode. If Xcode asks if you would like to update your project to the recommended settings, select "yes" and wait for the project to update.
 
-In order to build your app to an iOS device, you will need to link your apple account to Xcode. Under the “General” tab, select “Team” and then “Add Account.” Add the Apple ID account associated with your iOS device (this is the account you use to download apps and purchase music through iTunes). Next, scroll down to “Deployment info” and select “iPhone” or “iPad” depending on the type of device you are building to. If you are still getting the warning message "No code signing identities found," make sure that your Apple ID is selected and click on the "Fix Issue" button.
+In order to build your app to an iOS device, you will need to link your apple account to Xcode. Under the "General" tab, select "Team" and then "Add Account." Add the Apple ID account associated with your iOS device (this is the account you use to download apps and purchase music through iTunes). Next, scroll down to "Deployment info" and select "iPhone” or "iPad" depending on the type of device you are building to. If you are still getting the warning message "No code signing identities found," make sure that your Apple ID is selected and click on the "Fix Issue" button.
 
 ![Add your account in Xcode.](../Images/ar-dev-34.png)
 
