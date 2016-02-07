@@ -273,8 +273,18 @@ img.center{
     clear: both;
 }
 
-img.left{
-         
+div.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+
+h3.center{
+   display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;  
 }
 
 a{
