@@ -9,56 +9,7 @@
    <script src="../script.js"></script>
    <title>Jacob W. Greene</title>
    <link rel="shortcut icon" href="../Images/favicon.ico">
-   
-   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-   <script type="text/javascript">
-      
-      google.load('visualization', '1.1', {'packages':['table', 'controls', 'corechart', 'map']});
-      
-      google.setOnLoadCallback(drawCharts);
-      
-        function drawCharts() {
-      var queryString = encodeURIComponent('SELECT B, C, G, E, F, H, I, J, K, M, N, R, S');
 
-      var query = new google.visualization.Query(
-          'https://docs.google.com/spreadsheets/d/1sg6r1fvHdjIQj_LSy1ZL0axg0BEHCjXb9Sxzz9jLlqw/gviz/tq?sheet=Form1&headers=1&tq=' + queryString);
-      query.send(handleSampleDataQueryResponse);
-    }
-
-    /*map script*/
-   google.setOnLoadCallback(drawMap);
-      
-        function drawMap() {
-      var queryString = encodeURIComponent('SELECT P,Q,L');
-
-      var query = new google.visualization.Query(
-          'https://docs.google.com/spreadsheets/d/1sg6r1fvHdjIQj_LSy1ZL0axg0BEHCjXb9Sxzz9jLlqw/gviz/tq?sheet=Form1&headers=1&tq=' + queryString);
-      query.send(handleMap);
-    }
-
-    function handleMap(response) {
-      if (response.isError()) {
-        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-        return;
-      }
-      
-      var data = response.getDataTable();
-
-      var options = {
-        showTip: true,
-        enableScrollWheel: true,
-        mapType: 'normal',
-        useMapTypeControl: true,
-        showTip: true,
-      }
-      
- //create Map
-      var chart = new google.visualization.Map(document.getElementById('map_div'));
-      chart.draw(data, options);
-      
-    }	  
-	  
-   </script>
    
    
 </head>
@@ -104,18 +55,24 @@
 
 <div class= "maintextresearch">
 
-<h3>Augmented Reality Criticism Applications</h3>
+<h3>Augmented Reality Criticism</h3>
 
-<p>If you are browsing this site on an Android device, you can download beta-releases of the Trace ARCs applications by clicking on the links below. Before you download, allow your device to download from "Unkown Sources" in the "Security" option of your device settings. Once the .apk file is downloaded to your device, click on the notification icon, or locate and select the file in your "downloads" folder.</p>
+<p>Part of my research explores how writing with mobile augmented reality technology can catalyze social awareness and action. To create AR, writers overlay physical objects or locations with digital content (images, video, text, sound, etc.) made accessible through mobile device applications. Through Trace’s multimodal publishing hub, scholars and students work together to create, distribute, and circulate AR projects. Below, you can check out a few of the collaboratively designed mobile augmented reality applications I am developing as the Augmented Reality Criticisms Coordinator for the Trace Innovation Initiative at the University of Florida. For more information about Trace's ARCs project, visit <a href="http://trace.english.ufl.edu/projects/arcs/">the Trace website.</a></p>
+ 
+ 
+ <h3>Beta-Release Apps</h3>
+ 
+ <p>If you are browsing this site on an Android device, you can download beta-releases of Trace ARCs applications by clicking on the links below. Before you download, allow your device to download from "Unkown Sources" in the "Security" option of your device settings. Once the .apk file is downloaded to your device, click on the notification icon, or locate and select the file in your "downloads" folder.</p>
  
    <ul> 
 	  <li><a href="SuperPacScramble.apk"><p>Super PAC Scramble</p></a></li>
 			<p>Super PAC Scramble is a single-player augmented reality game that educates players about monetary donations for the 2016 U.S. presidential election. Using campaign logos as trigger images, the game invites players to select one of seven presidential frontrunners and collect financial support for his or her campaign. By digitally dragging and dropping names and donations onto a candidate’s logo, players learn which presidential contenders are and are not supported by super PACs as well as the difficulties of becoming a viable candidate through small, individual donations. Super Scramble was created by Jacob Greene and Melissa Bianchi.</p>
-  
+	  <li><a href="Hyperlinks.apk"><p>Hitting the (Hyper)links</p></a></li>
+			<p>TRACE’s “Hitting the (Hyper)links: Augmenting Spectatorship at TPC” app augments the spectators critical experience at the Players Tournament, altering the cycle of spectacle and consumption inherent in the TPC site. For this project, the most visible spaces on the course are chosen as “trigger images”: the clubhouse, the famous 17th “island” green, and the “parade of flags.” These three spaces in particular are highly visible narratives. Providing counter, critical narratives of predatory capitalism, ecological devastation, and white privilege, therefore, changes these spaces from sites of consumption to those of critique.</p>
    </ul>
 
 
-<p>For more information about Trace's ARCs project, visit <a href="http://trace.english.ufl.edu/projects/arcs/">the Trace website.</a></p>
+
 
 </div>
 
