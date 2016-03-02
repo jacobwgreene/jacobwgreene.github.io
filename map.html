@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>        
+      </style>
+      
+      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+      <script type="text/javascript">
+      google.load('visualization', '1.1', {'packages':['map']});      
+     
+      /*map script*/
+   google.setOnLoadCallback(drawMap);
+      
+            function drawMap()
+        {
+          var queryString = encodeURIComponent('SELECT C,D,A');
+    
+          var query = new google.visualization.Query(
+              'https://docs.google.com/spreadsheets/d/1cpR7L-D9oHWv79Mk7j8utgRQbNJYFPl5O9SCQHD5Kwo/gviz/tq?sheet=Form1&headers=1&tq=' + queryString);
+          query.send(handleMap);
+        }
+    
+        function handleMap(response)
+        {
+          if (response.isError())
+          {
+            alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+            return;
+          }
+          
+          var data = response.getDataTable();
+    
+          var options =
+          {
+            showTip: true,
+            enableScrollWheel: true,
+            mapType: 'normal',
+            useMapTypeControl: true,
+            showTip: true,
+            icons:
+            {
+              default:
+              {
+                normal: 'http://jacobwgreene.github.io/icon2.png',
+                selected: 'http://jacobwgreene.github.io/icon2.png'
+              }
+            }
+          }
+          
+     //create Map
+          var chart = new google.visualization.Map(document.getElementById('map_div'));
+          chart.draw(data, options);
+          
+        }     
+  </script>
+</head>
+<body>  
+        <div id="map_div" style="width: 900px; height: 500px"></div>      
+ </body>
+</html>
