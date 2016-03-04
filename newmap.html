@@ -1,247 +1,1076 @@
-<!DOCTYPE html>
+
+<!DOCTYPE HTML>
+<!--
+	Highlights by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Ghost Bikes Jax</title>
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 500px;
-        width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script>
+	<head>
+		<title>Kairos: Jones & Greene, Augmented Vélorutionaries</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		
+		<!--favoicon-->
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<style>
+			#map {
+			height: 475px;
+			width: 450px;
+			margin-left: auto;
+			margin-right: auto;
+		  }
+		</style>
+	</head>
 
-        function initMap() {
-        
-        // marker coordinates
-        var odom = {lat: 30.347, lng: -81.675};
-        var roberson = {lat: 30.332246, lng: -81.656216};
-        var jones = {lat: 30.305941, lng: -81.6371865};
-        var huish = {lat: 30.3280545, lng: -81.3974017};
-        var hartley = {lat: 30.3234419, lng: -81.8484281};
-        var rettinger = {lat: 30.1418884, lng: -81.5465488};
-        
-        var currentInfoWindow = null;
-        
-        //map initialization
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
-          center: jones,
-          });
+	<body>
+		<!-- Header -->		
+			<section id="header">
+				<header class="major">
+					<h2>Augmented Vélorutionaries</h2>
+					<p>Digital Rhetoric, Memorials, 
+					<br>and Public Discourse</p>
+				</header>
+						
+				<div class="container">
+				
+					<ul class="actions">
+						<li title="move forward"><a href="#navmap" class="icon center fa-bicycle fa-5x scrolly"><span class="label"></span></a></li>
+						<h3>Click to Get Rolling!</a></h3>
+					</ul>
+					
+				</div>
+			</section>
 
-        //Eddie Odom infowindow
-        var odomString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Eddie Odom</h1> 12/28/2008' +
-            '<div id="bodyContent">'+
-            '<p>&#34He was well acquainted with the neighborhood. He knew the surroundings...I dont know what happened.&#34</p>'+
-            '<p><a href="http://ghostbikes.org/jacksonville/eddie-roosevelt-odom">'+
-            'http://ghostbikes.org/jacksonville/eddie-roosevelt-odom</a> '+
-            '</p>'+
-            '</div>'+
-            '</div>';
+		<!-- Navigation Clickmap -->
+			<section id="navmap" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="images/pic01.jpg" alt="" /></span>
+					<div class="content">
+					<header class="major">
+						<h2>Directions</h2><a href="#epigraph" class="button special scrolly small">Skip Section</a><br><br>
+								
+						</header>
+						
 
-        var odomwindow = new google.maps.InfoWindow({
-          content: odomString,
-          maxWidth: 300
-        });
+					<p>
+						Much like a cyclist or pedestrian encountering the petro-centric spaces of Jacksonville, Florida for the first time, this website may be frustrating for users to navigate, lacking a menu to help give bearings or make navigation simple. The design is intended to induce the aspects of ritual we discuss later in the ARCs section. Users may scroll up or down, use the clickable map below, or click the icons at the top and bottom of each section. For the optimal experience, please turn your sound up.
+					</p>
+								
+		<!--clickmap-->
+			
+			
+			
+			<div id="map"></div>
 
-        var markerodom = new google.maps.Marker({
-          position: odom,
-          map: map,
-          icon: 'icon2.png',
-          title: 'Eddie Odom'
-        });
-        markerodom.addListener('click', function() {
-           if (currentInfoWindow != null)
-           { 
-              currentInfoWindow.close(); 
-           } 
-        odomwindow.open(map, markerodom);
-        currentInfoWindow = odomwindow;
-          
-        });
-        
-        //Joel Roberson infowindow
-        var robersonString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Joel Roberson Jr.</h1> 4/6/2010'+
-            '<div id="bodyContent">'+
-            '<p>&#34The 23 year old driver, Sgt Bryan Gullet, was charged with misdemeanor death by vehicle, failing to reduce speed to avoid a collision, and failure to maintain a lane.&#34</p>'+
-            '<p><a href="http://ghostbikes.org/jacksonville/joel-roberson-jr">'+
-            'http://ghostbikes.org/jacksonville/joel-roberson-jr</a> '+
-            '</p>'+
-            '</div>'+
-            '</div>';
 
-        var robersonwindow = new google.maps.InfoWindow({
-          content: robersonString,
-          maxWidth: 300
-        });
 
-        var markerroberson = new google.maps.Marker({
-          position: roberson,
-          map: map,
-          icon: 'icon2.png',
-          title: 'Joel Roberson Jr.'
-        });
-        markerroberson.addListener('click', function() {
-          if (currentInfoWindow != null)
-           { 
-              currentInfoWindow.close(); 
-           } 
-        robersonwindow.open(map, markerroberson);
-        currentInfoWindow = robersonwindow;
-        });
-        
-        //Johnny Jones infowindow
-        var jonesString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Johnny Jones</h1> 6/23/2008'+
-            '<div id="bodyContent">'+
-            '<p>&#34We discovered the crossing signal button on the south side of the road did not work. We pushed the button every few seconds. We pushed it continuously. We pushed the button more than 40-times over a 5-1/2 minute time period and several cycles of the traffic lights from all directions.&#34</p>'+
-            '<p><a href="http://ghostbikes.org/jacksonville/johnny-jones">'+
-            'http://ghostbikes.org/jacksonville/johnny-jones</a> '+
-            '</p>'+
-            '</div>'+
-            '</div>';
+	
+			
+						<p>This is a map of the ghost bicycles in Jacksonville, Florida (recorded by GhostBikes.org). You may click areas of the map to jump to a section, or you may make linear progress forward using the bicycle icon and backward using the car icon.</p>				
+						<p>This website is intended to function as an electrate MEmorial, providing a space for users to learn about Ghost Bikes and to showcase an electronic monument. "What is an electronic monument," you may ask?
+						
+					<center><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/157501068?title=0&byline=0&portrait=0" width="400" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/157501068">vegas</a> from <a href="https://vimeo.com/user49568829">Ghost Bikes</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div></center>
+					
+					<center>
+						<ul class="icons">
+							<li title="move forward"><a href="#epigraph" class="icon center fa-bicycle fa-3x scrolly"><span class="label"></span></a>
+							<h3>move forward</h3>
+							</li>
+							<li title="go backward"><a href="#header" class="icon center fa-car fa-3x scrolly"><span class="label"></span></a>
+							<h3>Go Backward</h3></a>
+							</li>
+						</ul>
+					</center>
+						</div>
+				</div>
+			</section>				
+			
+		<!-- Epigraph -->
+			<section id="epigraph" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="images/pic02.jpg" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<a href="#one" class="button special scrolly small">Skip Section</a><br><br>
+						</header>
+								<blockquote class="align-left">In a car you’re always in a compartment, and because you’re used to it you don’t realize that through that car 
+								window everything you see is just more TV. You’re a passive observer and it is all moving by you boringly in a frame. 
+								<br>&nbsp; &nbsp; &nbsp; &nbsp; On a cycle the frame is gone. You’re completely in contact with it all. 
+								You’re in the scene, not just watching it anymore, and the sense of presence is overwhelming. That concrete whizzing by five 
+								inches below your foot is the real thing, the same stuff you walk on, it’s right there, so blurred you can’t focus on it, 
+								yet you can put your foot down and touch it anytime, and the whole thing, the whole experience, is never removed from 
+								immediate consciousness (12). —Robert M. Pirsig, <strong>Zen and the Art of Motorcycle Maintenance: An Inquiry into Values</strong></blockquote>
+						
+						<center><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/157501134?title=0&byline=0&portrait=0" width="400" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/157501134">desiringmachines</a> from <a href="https://vimeo.com/user49568829">Ghost Bikes</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div></center>
+						
+						<center>
+						<ul class="icons">
+							<li title="move forward"><a href="#one" class="icon center fa-bicycle fa-3x scrolly"><span class="label"></span></a><h3>move forward</h3></li>
+							<li title="go backward"><a href="#navmap" class="icon center fa-car fa-3x scrolly"><span class="label"></span></a><h3>go backward</h3></li>
+						</ul>
+						</center>
+						</div>
+				</div>
+			</section>
 
-        var joneswindow = new google.maps.InfoWindow({
-          content: jonesString,
-          maxWidth: 300
-        });
 
-        var markerjones = new google.maps.Marker({
-          position: jones,
-          map: map,
-          icon: 'icon2.png',
-          title: 'Johnny Jones'
-        });
-        markerjones.addListener('click', function() {
-          if (currentInfoWindow != null)
-           { 
-              currentInfoWindow.close(); 
-           } 
-        joneswindow.open(map, markerjones);
-        currentInfoWindow = joneswindow;
-        });
-        
-        //Robert Huish infowindow
-        var huishString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Robert Huish</h1> 11/28/2011'+ 
-            '<div id="bodyContent">'+
-            '<p>&#34Huish was riding a bicycle with friends about 1:50 a.m. at Third Street and East Coast Drive when Jacobs ran into him with his Isuzu Rodeo and kept driving.&#34</p>'+
-            '<p><a href="http://jacksonville.com/news/crime/2010-12-11/story/residents-near-site-atlantic-beach-hit-and-run-say-intersection-wild#ixzz1fiX78o7s">'+
-            'http://jacksonville.com/news</a> '+
-            '</p>'+
-            '</div>'+
-            '</div>';
+		<!-- One -->
+			<section id="one" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="images/pic03.jpg" alt="" /></span>
+					<div class="content">
+						<header class="major">
+						<h2>Intersections (Introduction)</h2><a href="#two" class="button special scrolly small">Skip Section</a><br><br>
+						</header>
+							<p>We see them locked to a lamppost or a street sign and wonder what they are. Their tires flat from dry rotted cracks, chains decaying with rust. Spray painted white, they strike us as out of place, as ghastly objects, and we might wonder what they mean. If we do know what they signify, they speak to us on a subtle, emotional level. At once, they seem to suggest the passage of time, and yet they are motionless, broken objects. The sight of ghost bicycles are increasingly common on city streets and country roads. This webtext examines ghost bikes as rhetorical intersections between petrocentric automobile culture and bicycle culture. Petrocentrism is the monocultural dependence on fossil fuels, or as the University of Alberta research group Petrocultures defines it, “the social, cultural and political implications of oil and energy use on individuals, communities, and societies around the world” (Petrocultures). Petrocentrism can be contrasted with polyculture, which advocates for multiple perspectives, and,  in the case of travel,  denotes a  host of alternative means of transportation that stand outside of—even in opposition to—the single-passenger, commuter automobile.</p>
+						
+						<center><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/157501239?title=0&byline=0&portrait=0" width="400" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+						<p><a href="https://vimeo.com/157501239">memorial</a> from <a href="https://vimeo.com/user49568829">Ghost Bikes</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div></center>
+						
+							<p>Ghost bicycles advocate for non-petrocentric attitudes by revealing the true cost of vehicular transportation. This essay employs the concept of MEmorial, which Gregory Ulmer (2005) introduced in <em>Electronic Monuments</em>. According to Ulmer, MEmorials are not intended to condemn or pass judgment, but instead visualize the invisible sacrifices made on behalf of certain cultural or national values (p. xiii). If when confronted with the visibility of these losses, argued Ulmer, we do not see a sacrifice as acceptable, we must then change our values and attitudes. Examining the 2013 “Florida Pedestrian and Bicycle Strategic Plan,” we argue that traditional public advocacy, while important and necessary in immediately reducing deaths and injuries, cannot eliminate these deaths because they are part of a system dependent on petrocentric values. This state-sanctioned plan identifies cyclists and pedestrians as “vulnerable road users,” placing them in a position that naturalizes the automobile as the only safe means of conveyance. We contrast the concept of vulnerability with Derrida’s concept of “armor.” Petro-armor protects, covers, and abjects other ways of traveling. If we, as a culture or a nation, cannot accept the deaths of cyclists as necessary sacrifices to petrocentric attitudes, then we must be willing to make drastic changes to our values. If we are unwilling or unable to make these changes, then we should acknowledge and MEmorialize these tragic deaths instead of abjecting them.</p>
 
-        var huishwindow = new google.maps.InfoWindow({
-          content: huishString,
-          maxWidth: 300
-        });
+						<center><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/157500608?title=0&byline=0&portrait=0" width="400" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<p><a href="https://vimeo.com/157500608">alienation</a> from <a href="https://vimeo.com/user49568746">Ghost Bikes</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div></center>
 
-        var markerhuish = new google.maps.Marker({
-          position: huish,
-          map: map,
-          icon: 'icon2.png',
-          title: 'Robert Huish'
-        });
-        markerhuish.addListener('click', function() {
-          if (currentInfoWindow != null)
-           { 
-              currentInfoWindow.close(); 
-           } 
-        huishwindow.open(map, markerhuish);
-        currentInfoWindow = huishwindow;
-        });
-        
-        //Jack Hartley infowindow
-        var hartleyString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Jack Hartley</h1> 2/3/2009'+
-            '<div id="bodyContent">'+
-            '<p>&#34Drivers of motor vehicles have one job to do when driving. That is to simply not hit anything. Is that really asking too much?&#34 -bikejax.org</p>'+
-            '<p><a href="http://ghostbikes.org/jacksonville/jack-hartley">'+
-            'http://ghostbikes.org/jacksonville/jack-hartley</a> '+
-            '</p>'+
-            '</div>'+
-            '</div>';
+							<p>Sean Morey’s (n.d.) webtext <a href="http://www.roadkilltollbooth.com/">“Roadkill Tollbooth”</a> adopted Ulmer’s MEmorial method to reveal the abject sacrifices necessary to support petroculture by visualizing the animal deaths caused by the ecological disaster referred to as the BP oil spill. Morey’s webtext is a proposal for a toll station pre-paid for by the abject deaths of the animals killed by the BP oil spill, and it takes the form of an interactive online map with interactive, multimedia icons scattered across the actual route of the Florida Turnpike. Morey identified the “Roadkill Tollbooth” project as an “attempt to make conscious the BP disaster as a hyperobject.” The term “hyperobject” refers to Timothy Morton’s (2013) work in <em>Hyperobjects: Philosophy and Ecology After the End of the World</em>. Hyperobjects, such as global warming or even racism, are temporally and spatially vast, making them ubiquitous, sublime, and difficult to observe even with the aid of technology. Morey reads the BP oil spill as itself a hyperobject, but because of its finite location, it might be just as useful to broaden our view further to see the gulf disaster as connected to—even a symptom of—a larger dependence on fossil fuel infrastructure. As Morey asserts, the oil spill is “created by the consumption of oil that makes such a hyperobject possible.” In the case of racism—which contributed to urban sprawl (with its accompanying petrocentrism) through white flight—the very design of certain cities naturalizes the discourse of racism and petrocentrism with its ubiquity.</p>
 
-        var hartleywindow = new google.maps.InfoWindow({
-          content: hartleyString,
-          maxWidth: 300
-        });
+							<p> Morton expands on the concept of the hyperobject in relation to speciesism and racism in his forthcoming (2016) book <em>Dark Ecology: For a Logic of Future Coexistence</em>. In a preview released on his blog, he quotes from the book:</p>
 
-        var markerhartley = new google.maps.Marker({
-          position: hartley,
-          map: map,
-          icon: 'icon2.png',
-          title: 'Jack Hartley'
-        });
-        markerhartley.addListener('click', function() {
-          if (currentInfoWindow != null)
-           { 
-              currentInfoWindow.close(); 
-           } 
-        hartleywindow.open(map, markerhartley);
-        currentInfoWindow = hartleywindow;
-        });
-        
-        //Chastity Rettinger infowindow
-        var rettingerString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Chastity Rettinger</h1> 2/3/2010'+
-            '<div id="bodyContent">'+
-            '<p>&#34Shortly before noon, a man driving eastbound in the right-hand turn lane attempted to switch lanes across the bike lane...The bike lane runs between the straight eastbound lanes and the turn lane.&#34</p>'+
-            '<p><a href="http://jacksonville.com/news/metro/crime/2009-04-13/story/1_dead_1_injured_in_southside_crash_involving_bicycles">'+
-            'http://jacksonville.com/news</a> '+
-            '</p>'+
-            '</div>'+
-            '</div>';
+							<blockquote>There is such a thing as the human. But <em>human</em> need not be something that is ontically given: we can’t see it or touch it or designate it as present in some way (as whiteness or not-blackness et cetera). There is no obvious, constantly present positive content to the human…Racism exists when one fills out the gap between what one can see (beings starting engines and shoveling coal) and what this human thing is: the human considered as a species, that is, as a hyperobject, a massively distributed physical entity of which I am and am not a member, simultaneously…The racist effectively erases the gap, implicitly reacting against [what] Hume and Kant did to reality. Since their age we have thought it sensible that there is some kind of irreducible rift between what a thing is and how it appears, such that science handles data, not actual things (“Professor Morton…”).</blockquote>
 
-        var rettingerwindow = new google.maps.InfoWindow({
-          content: rettingerString,
-          maxWidth: 300
-        });
+							<p>The deaths of pedalcyclists and pedestrians stand as the violent, material intersection of massively displaced attitudes and designs. Morey’s “Roadkill Tollbooth” project visualizes these intersections by making the invisible visible, advocating for widespread change in cultural values.</p>
+							
+							<p>Morey insisted that the MEmorial is not parody, that the “overall intent is serious,” and that “The Roadkill Tollbooth would not be a parody of other tollbooths.” Yet, we must acknowledge that with our current value system, this proposal will most likely be rejected by lawmakers as such and abjected by many as parody. Morey asserts that “[n]othing would please me more than to have this monument physically installed along the Florida turnpike, a reminder to all motorists that routine actions can have large-scale repercussions.” However, it can be said that his project is conceptual in nature, given the unlikelihood that it would ever be built in our petrocentric culture. Instead, Morey uses digital media to visualize “The Roadkill Tollbooth” independent of current cultural value structures in order to bring our attention to the hidden costs of those values. MEmorials such as “Roadkill Tollbooth” are vital rhetorical tools for reconceptualizing petrocentric cultural values. Although the digital component of our project has a similar goal to that of Morey’s, we extend it into the material landscape by utilizing the mundane, public spaces created by petroculture as rhetorical elements of the critique.</p>
+							
+						<center><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/157501143?title=0&byline=0&portrait=0" width="400" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+						<p><a href="https://vimeo.com/157501143">electracy</a> from <a href="https://vimeo.com/user49568829">Ghost Bikes</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div></center>
+							
+							<p>We created the mobile augmented reality experience “Death Drive(r)s: Ghost Bike (Monu)mentality” to visualize electronic MEmorials of ghost bikes. The project was built as a mobile ARC (augmented reality criticism) through the <em>TRACE</em> Innovation Initiative, a digital humanities organization at the University of Florida. When viewed through a smartphone or tablet camera, the application overlays a digital ghost bike within the physical space of a cyclist’s death. Ghost bikes already exist as public monuments, and our application seeks to extend these physical memorials into the digital realm.</p>
 
-        var markerrettinger = new google.maps.Marker({
-          position: rettinger,
-          map: map,
-          icon: 'icon2.png',
-          title: 'Chastity Rettinger'
-        });
-        markerrettinger.addListener('click', function() {
-          if (currentInfoWindow != null)
-           { 
-              currentInfoWindow.close(); 
-           } 
-        rettingerwindow.open(map, markerrettinger);
-        currentInfoWindow = rettingerwindow;
-        });
-      }
+							<p>[Figure #: Ghost Bicycle 1]</p>
+
+							<p>Thus, unlike Morey’s Roadkill Tollbooth, our project combines Ulmer’s (2005) instruction to “design an electrate commemoration-a MEmorial-for a disaster” with Jenny Rice’s (2012) claim that the existing discourse practices of a community are “the best sites for making interventions into material spaces” (Ulmer, p. xxxiii; Rice,  p. 7). Through this methodology, our application aims to catalyze a shift in the public discourse about mundane public spaces. Mark Sample (2014) argues that mobile technologies can be used to connect personal histories to public spaces. Creating a network of diverse voices within a public space, argues Sample, converts the public’s perception of a space from “mundane” to “haunted,” thereby illuminating the “layers of hidden experience” interwoven in our day-to-day material realities (p. 72).</p>
+
+							<p>Ghostbikes.org, an organization devoted to raising public awareness of these roadside memorials—uses mapping technologies to pinpoint locations where fatalities have occurred, thereby preserving the memory of the person and the memorial. However, the use of mapping relies on a <em>topos</em>-driven logic, accessible as an isolated incident, divorced from the physical location. In order to endow the space with the quality of being haunted, the augmentation requires the user to move through the areas in which these crashes occur.</p>
+
+							<p>[Figure #: ARC Demo Image]</p>
+
+							<p>Thus, the project employs <em>chora</em>—a concept popularized by Plato in the Timaeus to refer to the space inside the <em>polis</em> but outside the city proper—as its method over <em>topos</em>. Ulmer (1994) defines choragraphy as “a rhetoric of invention concerned with the history of ‘place’ in relation to memory” (p. 39), and a “method for writing and thinking electronically” (p. 45).  While <em>topos</em>-based methods encourage us to see these crashes as isolated, individual incidents, <em>choric</em> methods insist that we step back and see the larger connection that emerge out of place. As Ulmer (2005) asserts in <em>Electronic Monuments</em>, “chora mediates individual/collective identities” (p. 26) and that “individuals may not want to wreck their cars, but nations do” (p. 35).While Ghostbikes.org does the important work of collecting, archiving, and preserving the individual incidents, the Ghost Bikes MEmorial re-places these objects back into the physical space with the intent of integrating them back into day-to-day reality.</p>
+					</div>
+					
+
+					<center>
+					<ul class="icons">
+							<li title="move forward"><a href="#two" class="icon center fa-bicycle fa-3x scrolly"><span class="label"></span></a><h3>move forward</h3></li>
+							<li title="go backward"><a href="#epigraph" class="icon center fa-car fa-3x scrolly"><span class="label"></span></a><h3>go backward</h3></li>
+					</ul>
+					</center>
+					
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<h2>Ghost Bikes: History & Culture</h2><a href="#three" class="button special scrolly small">Skip Section</a><br><br>
+						</header>
+							<p>Zack Furness’ (2010) <em>One Less Car: Bicycling and the Politics of Automobility</em> explored cycling as a radical form of political expression and an increasingly “more attractive mode of urban transportation due in part to longer traffic delays, wildly fluctuating oil and gas prices, and the increasing costs of owning and operating a car ” (p. 3). However, he asserted, it remains “not only a fringe mode of transportation in a country with more vehicles than licensed drivers; it is a form of mobility rendered virtually obsolete by the material infrastructure and dominant cultural norms in the United States” (p. 4). Furness describes how the bicycle became “the centerpiece of an emerging critique of the automobile and car culture” throughout the 1960s and 70s (p. 47). Known as “vélorutionaries,” (“velo” is French for “bicycle”), cycling activists began to leverage the rhetorical dissonance of the bicycle to challenge the “ideological, spatial, and environmental tensions of car culture” (p. 47).  As a cultural icon increasingly associated with values such as environmentalism and conscientious urban planning, the bicycle served as a natural foil for the insidious, carbon-based impacts of an auto-obsessed culture.</p>
+
+							<p>The dangers of riding a bicycle on roads made for automobiles are visible and apparent in the roadside markers known as ghost bikes. Ghost bikes, also known as WhiteCycles, are a type of memorial unique to bicycle culture. These memorials first appeared in the early 2000s, emerging out of San Francisco from the work of artist Jo Slota, who painted mangled bicycles white. The first recorded ghost bike memorial appeared in St. Louis Missouri when Patrick Van der Tuin—a frustrated cyclist turned activist—placed mangled bicycles where he knew cyclists had been killed by motorists, according to Peter Walker's (2010) article in <em>The Guardian</em>. The ghost bike as we know it emerged from New York City soon after, popularized by activist organizations like GhostBikes.org.</p>
+
+							<p>Today, ghost bike refers to a derelict bicycle that has been repurposed as a marker for a place where a cyclist has been seriously injured or killed in a collision with a motorist. Often, these bicycles are spray-painted solid white and attached to a fixed object, such as a street sign or lamp post to reduce their value and make them difficult to remove. These markers serve many roles. Primarily, they are a <em>memento mori</em> for the public and a <em>memento vitam</em> for the family and community. They are monuments celebrating and commemorating those who have been injured, and reminding both cyclists and motorists of the importance of remaining vigilant on the road. In cases where negligent motorists collide with cyclists, the cyclist is by far the most likely to incur severe injury. Likewise, the many unsolved hit-and-run bicycle deaths each year underscore that motorists are not held liable for negligent actions, reinforce petrocentric attitudes.  Ulmer (2005) provides a succinct description of this attitude when he writes that the automobile invokes a public subject that demands the right “to drive wherever I want, whenever I want, for whatever purpose, in whatever manner I choose, so help me God” (p. 49), make the connections between ghost bicycles and MEmorial abundantly clear. These memorials embody what Furness (2010) calls an “intense frustration with a car culture in which the rhetoric of the freedom of the road often replaces the actual right to freely use the road” (p. 9).</p>
+
+							<p>Chaining ghost bikes to a fixed public structure reflects their MEmorial status, as bicycle deaths are inescapably attached to a culture that does not take non-motorized transportation into its spatial design. Such a MEmorial does “not advocate or condemn the social commitment to the automobile, but only makes it recognizable as a specific kind of value, belief, commitment, with the purpose of helping the public understand itself in its collective identity” (p. 50). Cycling deaths are what Ulmer refers to as abject sacrifice: those deaths that we do not recognize as sacrifices made for our freedoms. Our petrovalues, such as the freedom to move at extremely high speeds in enormous metal objects, are supported by these deaths. Spray painting the bicycle memorials white originated as a theft deterrent, but it also suggests that these monuments are in a sense <em>de_valued—repurposed waste of an abject remnant—which paradoxically allows them to remain visible by keeping them from being stolen, but it also causes them to be seen by some communities as an eyesore. These haunting objects that result from this process speak to motorists who might not otherwise share a discourse space with cyclists. They are _memento mori</em> in a literal sense, calling out to us: “remember you can die.”</p>
+
+							<p>Reading ghost bicycles as a critical response to petroculture, it becomes obvious that these discarded objects, this repurposed waste, come to signify resistance and counter-narratives. While automobiles tell us we can go anywhere, be anyone while hidden in their anonymous hulls, these narratives of loss insist on the personal. The grief they mark is that of the community. The people who die are remembered and celebrated in the object. In <em>Heuretics</em>, Ulmer (2005) asserts that if “in commodity or consumer culture human relationships have been displaced into things, then these same things, taken up into the details of a diegesis, become places of passage” (p. 127). These object-signified locations act as public discourse, speaking on behalf of cyclists to the community at large. These memorials help us as a community to honor their memories, but they also serve as a reminder that we must travel with vigilant awareness and care. They speak not just to motorists—reminding them that operating a vehicle means taking lives into one’s hands—but also to other riders—fostering solidarity and resistance to the grand narrative of automobile culture. They remind us that roads are public spaces providing many points of contact, many avenues for interaction and intersection.</p>
+
+						<center><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/157501134?title=0&byline=0&portrait=0" width="400" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+						<p><a href="https://vimeo.com/157501134">desiringmachines</a> from <a href="https://vimeo.com/user49568829">Ghost Bikes</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div></center>
+							
+							<p>Jacques Derrida’s (1993) concept of ‘armor,’ which he develops in <em>Specters of Marx</em>, helps to explain how automobiles work to conceal the social, cultural, and material impact they have upon the urban landscape. Derrida asserts that armor “covers the body from head to foot, the armor of which it is a part and to which it is attached. This is what distinguishes a visor from the mask with which, nevertheless, it shares this incomparable power, perhaps the supreme insignia of power: the power to see without being seen” (p. 8). As motorists move through the streets, their vehicles function in this way, protecting them, isolating them, and endowing them with this power. It is difficult to hear the counter-narrative of a silent ghost bike through  the roar of an engine; it is harder still to see from high in the cab how petroculture locks us in unsustainable spaces by design. Automobiles themselves can be seen as an iteration of <em>topos</em> logic. They are closed off from the outside, isolated and protected by a clearly demarcated space. Anyone who has ever commuted by bicycle on a hot, rainy Florida day will know the feeling of envy that accompanies looking into a vehicle’s cab to a passenger who is cool and dry.</p>
+
+							<p>This idea of exposure explains why victim blaming often occurs in the wake of a bicycle death. Petroculture encourages us to think of road biking as taking our lives into our own hands. This kind of thinking insists that cyclists don’t die because of a system that does not support multiple kinds of transportation, but instead because they placed themselves in a perilous situation without proper protection—the petroarmor of the automobile.  Cyclists might, however, rightfully respond that bicycling shouldn’t be punishable by death. In Daniel Duane’s (2013) article “Is It O.K. to Kill Cyclists?” he argues that:</p>
+
+							<p>cycling isn’t sky diving. It’s not just thrill-seeking, or self-indulgence. It’s a sensible response to a changing transportation environment, with a clear social upside in terms of better public health, less traffic and lower emissions. The world is going this way regardless, toward ever denser cities and resulting changes in law and infrastructure. But the most important changes, with the potential to save the most lives, are the ones we can make in our attitudes.</p>
+
+							<p>Ghost bikes call to us to make these attitude changes. They show the true costs of petroculture’s reliance on the automobile grand narrative. They are on the front lines, closer than advertisements, articles, or protests. They remind us that negligence on the road can, and does, mean death. In 2013, Michael Dumas ran an <em>AL.com</em> poll in response to three pedalcyclist fatalities in the same area of Mobile, AL in a single week. In response to the question “are they a fitting tribute or pointless vandalism?” one user, RobnDobbie (2013) responded:</p>
+
+							<p>Maybe when the streets of Mobile are lined with white memorial bicycles the MPO will start to consider the bicycle and pedestrians in the design and rehabilitation of Mobile’s streets. Take for example the busy intersection on the Hank Aaron loop at Beauregard Street and Water Street. There is not a single pedestrian cross walk. This is 2013. Transportation Planners know better.</p>
+
+							<p>Thus, as this frustrated Alabamian writer notes, these monuments serve as a location for public advocacy. The material bicycles occupy petrocentric space, revealing the disconnect between public, legal forms of transportation and the dangers posed by using them. The bicycle visually speaks on behalf of a group who are often not taken into consideration by community planning committees, and who cannot be heard by motorists traveling at high speeds in large, enclosed vehicles.  Although motorists cannot hear cyclists, they can see them.</p>
+
+						<center><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/157501447?title=0&byline=0&portrait=0" width="400" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+						<p><a href="https://vimeo.com/157501447">protection</a> from <a href="https://vimeo.com/user49568829">Ghost Bikes</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div></center>
+							
+							<p>These visuals act on drivers from their very <em>presence</em>, as defined by visual rhetoric scholars Chaim Perelman and Lucie Olbrechts-Tyteca (1971) in <em>The New Rhetoric</em> (p. 115–120). Presence refers to how an image moves to the foreground of the observer’s consciousness. In his chapter “The Psychology of Rhetorical Images,” Charles A. Hill (2008) refers to the psychological relationship between images and “developing or revising one’s beliefs based on [these mental] images” as <em>vividness</em> (p. 31). Vividness, according to Hill is a major quality that contributes to the object’s power of presence. He offers a continuum to define the concept of vividness, ranging from most vivid information—”actual experience, moving images with sound, static photograph”—to less vivid information—”line drawing, narrative, descriptive account; descriptive account; abstract, impersonal analysis; statistics” (p. 31). While motorists are isolated from sound by the automobile itself, these bicycles operate somewhere between static photograph and actual experience, since they are in a sense <em>experienced</em>, encountered as the driver moves through physical space. These images occupy our imaginations with a vivid presence, forcing us to confront the cost of petrocentric values at the level of affect. In this way, the ghost bike operates as a visual “punctum,” a term popularized by Roland Barthes (1984) to refer to the small, seemingly irrelevant details of an image that nonetheless produce a strong emotional resonance within the viewer (p. 43). The word “punctum” means any kind of sharp edge or tip, and Barthes uses it in this sense to refer to the way in which images hold the potential to “‘prick’” at the armor of entrenched ideologies, such as the values of a petroculture (p. 47). As Derrida refers to the difference between the “visor and mask, “these roadside images pierce through petro-armor—through the one open space, the windshield—with their emotionally vivid presence.</p>
+
+							<p>Derrida asserts that “one cannot speak of generations of skulls or spirits except on the condition of language and the voice, in any case of that which marks the name or takes its place” (p. 9). Ghost bicycles challenge the rhetoric of the grand narrative of automobile culture by making visible the cost of privileging automobiles and accepting them as the natural means of individual conveyance. Covered with plastic flowers, personal messages, and faded photographs, they seek to “develop or revise” public discourse through the “vivid,” affective logic of visual rhetoric (2008, p. 31). They occupy our streets to make that sense of loss apparent to the public. As Ulmer asserts, chora “names the way in which a specific geographical region provides a mnemonic space for collective invention” (26). Thomas Rickert (2007) asserts in the article,  “Towards the Chōra: Kristeva, Derrida, and Ulmer on Emplaced Invention” that “we should begin to consider media not simply the <em>medium</em> by which we interact and communicate with others, but in a quite literal sense a <em>place</em>“(p. 251). These ghost bicycles point to the individual place, the person and the sacrifice, <em>and</em> toward the ubiquitous public value for which that sacrifice was made. Each object is unique in type and size; it is covered with remnants and private memories which make the visual personal. As Furness (2010) asserts:</p>
+
+							<p>The bicycle, like the automobile, is an object that becomes meaningful through its relationship to an entire field of cultural practices, discourses, and social forces. These linkages, or what cultural theorists call <em>articulations</em>, are not naturally occurring, nor are they due to the essence of the bicycle itself. Rather, they are made: people construct, define, and modify these connections by writing about bicycles, displaying them in museums, documenting them in films, representing them on T-shirts and posters, singing about them, fixing them, and, of course, riding them (p. 9-10).</p>
+
+							<p>Ghost bikes take on further intersectionality as they literally represent the collision of ideologies and public and private lives in spaces where those lives were forced to stop moving in any direction. The bicycles are themselves <em>broken</em>, purposefully unusable fixtures, remnants of destructive, useless loss. They communicate and memorialize private losses in a space available to the public imagination. These images are vivid because they represent an individual’s death, not just an impersonal statistic in a spreadsheet.</p>
+
+						<center><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/157500621?title=0&byline=0&portrait=0" width="400" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<p><a href="https://vimeo.com/157500621">sacrifices</a> from <a href="https://vimeo.com/user49568746">Ghost Bikes</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div></center>
+							
+							<p>Yet, the bicycle passes through time; it gets in the way of pedestrians; its paint chips as it whispers reminders to us on the street corner in the pouring rain. Ghost bicycles haunt the spaces they occupy, revealing glimpses of past losses. Ghost bikes offer counter narratives to the grand narrative of petroculture. These objects are ephemeral, however. They are here and then gone. Because they can obstruct pedestrian right-of-way, violate encroachment ordinances, and are considered by some communities to be an eyesore, ghost bicycles are often taken down within weeks or months of their unveiling, as is the case in Jacksonville, Florida where not a single ghost bike remains. As we will explore in the section, “Augmented Reality Criticism and Electronic Memorialization” emergent mobile technologies make it possible to overlay digital objects within physical environments, allowing writers to re-place these haunting MEmorials in the spaces where they have been removed.</p>
+
+					</div>
+					<center>
+					<ul class="icons">
+							<li title="move forward"><a href="#three" class="icon center fa-bicycle fa-3x scrolly"><span class="label"></span></a><h3>move forward</h3></li>
+							<li title="go backward"><a href="#one" class="icon center fa-car fa-3x scrolly"><span class="label"></span></a><h3>go backward</h3></li>
+					</ul>
+					</center>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="images/pic05.jpg" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<h2>Placing the Argument</h2><a href="#four" class="button special scrolly small">Skip Section</a><br><br>
+						
+						<center><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/157500607?title=0&byline=0&portrait=0" width="400" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<p><a href="https://vimeo.com/157500607">acceleration</a> from <a href="https://vimeo.com/user49568746">Ghost Bikes</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div></center>
+						
+
+							
+
+						</header>
+							<p>Jacksonville, Florida is one of the most dangerous places in America to ride a bicycle. It stands in stark contrast to the city of Gainesville, home to the University of Florida and one of the safest places in the country to ride. Florida writ large has the second most pedalcyclist fatalities of any state. Led closely by California, the two have more than double the pedalcyclist fatalities of any other state in the US. In 2013, there were 141 pedalcyclist deaths in California and 133 in Florida, making up 4.7% and 5.5% of the total traffic fatalities in the states, respectively, with Florida having nearly double the pedalcyclist fatalities per million of even California. Third on the list, Texas, had a mere 48 pedalcyclist deaths, though its total traffic fatalities, 3,382, was the highest, with California at 3,000 and Florida at 2,407:</p>
+							
+						<section>
+							<h4>Pedalcyclist Fatalities 2013</h4>
+							<h5>Six Highest States Ranked by Fatalities per Million Population</h5>
+							<div class="table-wrapper">
+								<table>
+									<thead>
+										<tr>
+											<th>State</th>
+											<th>Pedalcyclist Fatalities/Million Population</th>
+											<th>Pedalcyclist Fatalities</th>
+											<th>Resident Population (thousands)</th>
+											<th>Total Traffic Fatalities</th>
+											<th>% of Total Fatalities</th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>FL</td>
+											<td>6.80</td>
+											<td>133</td>
+											<td>19,553</td>
+											<td>2,407</td>
+											<td>5.5%</td>
+
+										</tr>
+										<tr>
+											<td>CA</td>
+											<td>3.68</td>
+											<td>141</td>
+											<td>38,333</td>
+											<td>3,000</td>
+											<td>4.7%</td>
+
+										</tr>
+										<tr>
+											<td>NC</td>
+											<td>2.23</td>
+											<td>22</td>
+											<td>9,848</td>
+											<td>1,289</td>
+											<td>1.7%</td>
+
+										</tr>
+										<tr>
+											<td>NY</td>
+											<td>2.04</td>
+											<td>40</td>
+											<td>19,651</td>
+											<td>1,199</td>
+											<td>3.3%</td>
+
+										</tr>
+										<tr>
+											<td>TX</td>
+											<td>1.81</td>
+											<td>48</td>
+											<td>26,448</td>
+											<td>3,382</td>
+											<td>1.4%</td>
+
+										</tr>
+										<tr>
+											<td>PA</td>
+											<td>0.86</td>
+											<td>11</td>
+											<td>12,774</td>
+											<td>0.9%</td>
+											<td>1,208</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										
+									</tfoot>
+								</table>
+								<p><em>Data taken from National Highway Traffic Safety Administration’s National Center for Statistics and Analysis 2013 Data Report</em>.</p>
+							</div>
+						</section>
+						
+						
+						
+						<p>Yet, the 2013 “Florida Pedestrian and Bicycle Strategic Safety Plan” asserts that “the magnitude of the problem extends beyond what police reported crashes show.” In order to encourage automobile operators to travel with greater care, the plan identifies pedalcyclists and pedestrians as “vulnerable road user” (pp. 1-2, 23). The study asserts that they are most likely to incur severe injury in crashes “because of the lack of protection in case of a crash.” Thus, the study reads cause of death as an absence of petroarmor, not of exposure to dangerous and unusable transportation environments for non-motorists. Defining cyclists as vulnerable is, as Derrida (1993) asserts, “the armor of which it is a part and to which it is attached” (8). While these definitions of users are intended to help bring charges against negligent drivers who refuse to share the road, they also make evident the ways we naturalize petroculture. Ulmer (2005) asserts that “individuals may not want to wreck their cars, but nations do” (35).  Though we blame individual drivers for causing the death of a cyclist, ghost bicycles force us to step back and see the larger system that requires these abject sacrifices to maintain its values.</p>
+
+						<p>Ghostbikes.org—an organization devoted to raising awareness about these memorials—maps locations of ghost bicycles and records fatal bicycle accidents on its website. These maps represent and preserve the locations in which a bicycle death has occurred. They make a public record of these fatalities. They also record the ghost bicycles themselves, which are often quickly removed, as is the case in Jacksonville where not a single ghost bike remains.</p>
+
+						<p>[Screenshot Map of Ghost Bikes in Jacksonville, taken from Ghostbikes.org]</p>
+
+						<p>Figure #: This map does not comprehensively represent cycling fatalities in Jacksonville. It is intended as a guide for finding ghost bike sites</p>
+
+						<p>From this map, a guide for finding the locations of ghost bikes in Jacksonville, it is evident that the accidents recorded above are both concentrated in the city center and yet also dispersed throughout the surrounding area. However, it is difficult to grasp the rhetorical significance of these markers until you understand the material history of the spaces in which these fatal collisions occurred.</p>
+
+						<p>Downtown Jacksonville sits about 12 miles west of the Atlantic coast along the St. John’s River.  As it grew in population throughout the early 20th century, Jacksonville residents moved east and south away from the urban core. In 1968, Jacksonville became the largest city in the contiguous United States when it voted to consolidate with the various municipalities of nearby Duval County. The depreciation of downtown Jacksonville continued into the late 20th century as wealthier, white residents moved to gated communities and beach-front properties outside of the urban core, leaving a stretch of busy intersections, strip malls, and unwalkable streets in their wake. Jacksonville has sought urban revitalization efforts since at least the 1990s; however, many of these efforts are more focused on transforming downtown Jacksonville into an economically viable sports and entertainment district than a traversable community space. The growth of New Urbanist mega-communities in the 2000s hampered efforts to create more livable, traversable spaces in urban parts of the city.</p>
+
+						<p>Similar to many other U.S. cities, the busy intersections and roadways of Jacksonville are simply “places of passage,” not sites to interact with other members of the community (Ulmer, 127). A 2002 report from Smart Growth America linked suburban sprawl to four key environmental characteristics known to be detrimental to the development of a livable, traversable city space: 1) dispersed communities, 2) clear delineations between home, work, and shopping areas, 3) large, inaccessible roads, and 4) weak or nonexistent community centers (Ewing, p.3). Such conditions, the researchers argue, exacerbate a number of public health concerns, including increased risk of traffic fatality, lower rates of walking or cycling, and higher levels of air pollution.</p>
+
+						<p>Despite this, the overall goals of the 2013 “Florida Pedestrian and Bicycle Strategic Safety Plan” are to educate motorists and non-motorists on “sharing the road” (23), “highway and traffic engineering component that is coordinated with enforcement and educational efforts to improve the safety of pedestrians and bicycles through design, construction, operation, and maintenance” (24), and work to ensure that “all areas of Florida’s transportation system provide safe and accessible travel options for pedestrians and bicycles” (20). Such a strategy seems to suggest that these numbers are so high, in part, because these states are locations where bicycling is rapidly becoming a popular mode of transportation and of cultural expression which it hasn’t finished establishing its voice in the grand narrative of petroculture. This plan identifies some of the risks of traveling by non-petrodriven means:</p>
+
+						<blockquote>Florida represented six percent of the U.S. population in 2011, but accounted for 11 percent of all U.S. pedestrian fatalities and 17.4 percent of all U.S. bicycle fatalities. According to the “Dangerous by Design” report, Florida has the top four metropolitan areas on the list of most dangerous large metro areas for walking in the U.S.: 1) Orlando-Kissimmee, 2) Tampa-St. Petersburg-Clearwater, 3) Jacksonville, and 4) Miami-Fort Lauderdale-Pompano Beach.</blockquote>
+
+						<p>Dangerous by design identifies one of the key issues facing “vulnerable road users,” our system is petrocentric, designed by and for petroculture. Users who step outside this system are subject to the risk of terrible injury and even death.</p>
+
+						<p>The purpose of Ulmer’s MEmorials are to expose the sacrifices necessary to support our value systems. This exposure forces us to question if the value is worth the sacrifice. If the value is not with the cost, we must change our value systems. In similar fashion, Melissa Lane’s (2012) <em>Ecorepublic</em> uses Plato to ask if in “clinging to the comforts and familiarities of our current way of life and its fossil-fuel infrastructure, despite a mounting consensus of scientific studies documenting the damage which this is doing, are we trapping ourselves in Plato’s Cave?” (p. 4). Like the prisoners of Plato’s allegory of the cave, automobiles lock us into particular ways of seeing the world. <em>Ecorepublic</em> explores methods with which to “model a sustainable relation between what we may call” in the terms of the ancient Greeks, <em>polis</em> and <em>psyche</em>, “the city and soul” (26). But like the prisoners of Plato’s cave, we must come to understand how the objects held before us, and those which contain us, help to produce the world we see as true. With this in mind, we can read these accidents as the tragic expression of the tension between capitalist monoculture (petroculture)—which uses as its vehicle the automobile—and expressions of polyculture such as bicycling and walking.</p>
+
+						<p>Ulmer asserts that “public discussion [remains] fixed on the events, rarely reflecting on the frame of the events, never raising the structural questions that might help grasp the cause and function of private and public death” (p. 35). Our personal values, what Lane calls <em>psyche</em>, abject these deaths which are required to support the <em>polis</em>, our national values. If we take Ulmer’s point to heart, we can see why scientific solutions will never be enough: “How to stop making mistakes? How to reduce error and eliminate accidents?” these are the goals of a certain scientific method incapable of thinking wreckage as sacrificial ceremony” (p. 35). Because our roadways are dangerous by design for vulnerable road users, no amount of reciprocal change will never do more than ameliorate these tragic deaths. In light of this, we must acknowledge that public tragedy is part of private freedom, and we must ask if the deaths of these cyclists is worth the values that come with petrocentrism:</p>
+
+						<p>In 2012 some 120 cyclists were killed in traffic accidents across Florida. That is as many as were killed in Britain in the same year—a country with three times as many people as Florida and a lot more cyclists. […] Such deaths are not inevitable: over the past few decades, traffic deaths in general have declined spectacularly–from almost 55,000 in 1972 to 33,000 in 2012. Much of these gains however have come from better-designed cars (D.K., 2014).</p>
+
+						<p>Though ghost bicycles appear internationally, they are very much an American phenomenon. When the German bicycle manufacturer Ghost brought its brand to the US through REI, many cycling advocates were outraged. The controversy is rooted in REI’s decision to bring the brand over without considering the meaning “ghost” already carried in American bicycling lexicon.</p>
+
+						<p>[rei-Ghost-bike-graphic]</p>
+
+						<p>Figure #: This image responds to REI’s thoughtless, even appropriative, branding.</p>
+
+						<p>A similar situation occured, when DKNY placed orange-painted bicycles across New York City as part of a guerilla marketing campaign, advocates thought this dishonored the ghost bike memorials throughout the city. See Zack Furness (2010) for more about the DKNY marketing campaign (p. 160)</p>
+
+						<p>[orangebikes.jpg]</p>
+
+						<p>[The orange bicycle DKNY.Com Guerilla marketing scheme]</p>
+
+						<p>Because many large American cities, such as Jacksonville, sprawled out with the rise of the automobile, they have become unusable by non-motorists, unsustainable and dangerous by design. The “Florida Pedestrian and Bicycle Safety Plan” (2013) works to remedy this problem. The Ghost Bikes ARC project overlaps the interests of the plan, with its objective of developing and implementing “a comprehensive communications plan that will improve public awareness of pedestrian and bicycle crash problems and programs directed at preventing them” (p. 28).  This program of action, like the ARC project can remediate and reduce deaths by raising awareness. Yet, as Ulmer makes clear, these deaths will never completely cease, so long as we hold certain values in our culture. Those who have given their lives should be memorialized. By replacing the ghost bikes with digital overlays, making non-petrocentric voices heard, we call into question the values of <em>polis</em> and <em>psyche</em>, of the relationship between the values of a city or nation and the sacrifices of the individual.</p>
+
+
+					
+					</div>
+					<center>
+					<ul class="icons">
+							<li title="move forward"><a href="#four" class="icon center fa-bicycle fa-3x scrolly"><span class="label"></span></a><h3>move forward</h3></li>
+							<li title="go backward"><a href="#two" class="icon center fa-car fa-3x scrolly"><span class="label"></span></a><h3>go backward</h3></li>
+					</ul>
+					</center>
+				</div>
+			</section>
+
+		<!-- Four -->
+		<section id="four" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="images/pic06.jpg" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<h2>Augmented Reality Criticism and Electronic Memorialization</h2><a href="#five" class="button special scrolly small">Skip Section</a><br><br>
+						</header>
+						<p>In August 2014, the technology analytics company comScore reported that 52% of all digital media consumption in the United States took place within mobile applications, officially eclipsing the prior dominance of the traditional desktop interface. As mobile computing continues its cultural ascendance and predicted merger with advances in wearable technologies, our day-to-day interactions with online media will increasingly take place across a variety of digital and physical interfaces. At <a href="http://trace.english.ufl.edu"><em>TRACE</em> innovation</a>, a digital humanities initiative housed in the University of Florida English Department, we are partnering with the kairos of this cultural transition to mobile computing by exploring potential applications of mobile augmented reality technology to humanities research. Typically experienced through the camera lens of a mobile device such as a smartphone or tablet, we use the term “augmented reality” (“AR” hereafter) to refer to any overlaying of digital content within physical space. <em>TRACE</em> is currently developing humanities-driven augmented reality applications with the aim of disseminating access points to critical public discourse.</p>
+
+						<p>In this section, we focus on the process of creating and designing <em>TRACE</em>’s mobile augmented reality experience “Death Drive(r)s: Ghost Bike (Monu)mentality,” which seeks to promote public awareness about cycling deaths in the city of Jacksonville, FL by augmenting locations where a cyclist has been killed or seriously injured. When viewed through a mobile device, the application overlays a digital “ghost bike” along with a short audio clip explaining the project’s relationship to Gregory Ulmer’s theory of electronic memorialization. As the user stands near an intersection or busy road, the digital bike appears as a visualization of the “abject sacrifice” to the cultural values of petroculture.</p>
+				
+						<center><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/157500618?title=0&byline=0&portrait=0" width="400" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<p><a href="https://vimeo.com/157500618">ritual</a> from <a href="https://vimeo.com/user49568746">Ghost Bikes</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div></center>
+						
+						<p>Our application of AR technology to public discourse emerges from a broader rhetorical history of activist efforts to repurpose the images, texts, and locations of dominant cultural discourses. Since at least the 1950’s, artists working out of the Letterist and Situationist movements have been appropriating the taken-for-granted materials of mass culture as sites of critique. Their primary technique, known as “detournement,” or “diversion,” is characterized by the remixing of cultural materials such as posters, texts, or images in order to create new and/or contradictory meanings. Contemporary iterations of detournement can be seen in the work of “culture jamming” organizations such as Adbusters and the Billboard Liberation Front (BLF).</p>
+
+						<p>Digital artist Mark Skwarek credits the BLF as key inspiration for his 2010 modification of the British Petroleum (BP) logo (9). When viewing any BP sign through Skwarek’s application, a digital pipe gushing black oil appears on top of the logo (fig. 1). Indeed, artists and activists across the world are beginning to explore how this emerging technology can be leveraged to catalyze critical public discourse on a wide array of social issues, including global warming, unethical labor practices, government corruption, and migrant deaths (Geroimenko, 2014).</p>
+
+						<p>[BPLogoHack] <br>
+						Figure #: “<em>The Leak in Your Hometown</em>. Photo courtesy of Mark Skwarek”</p>
+
+						<p>In creating our application, we utilized image-based augmented reality software, which requires the user to scan some kind of image (such as a QR code, company logo, advertisement, etc.) in order to “trigger” the appearance of the digital content. In AR terminology, this scanned image is referred to as the applications “trigger” and the digital content as the “overlay.” There are a variety of image-based augmented reality platforms available online, such as Aurasma, Layar, and Blippar. Aurasma, the software used for this project, is a free, online AR creation platform that works by uploading trigger images and multimedia overlays (videos, 3D models, audio files, etc.) to an online database. To access the augmentations, users simply download the Aurasma app, scan the trigger image, and Aurasma will search through the cloud database for the corresponding overlay. Similar to social media applications, Aurasma allows users to follow and unfollow different accounts, which prevents conflicts when multiple users create overlays for the same trigger image. To access the digital overlays on this website, download Aurasma from the Google Play or Apple iTunes store to a mobile device, and follow the channel “Death Drive(r)s.” Throughout the website, you will see images with a small Aurasma logo in the corner (fig. 2). Scan these images with the Aurasma application to view the digital overlays [NOTE: The AR component of the project is still under development and may not work properly].</p>
+
+						<p>[AurasmaLogo] <br>
+						Figure #: Scan images tagged with this logo.</p>
+
+						<p>The trigger image locations for the “Death Drive(r)s” application are typically busy intersections or roadways with little to no infrastructural support for cyclists. When users scan a trigger image at the location, they see a digital, 3D ghost bike along with a short audio overlay of Gregory Ulmer explaining the project’s connections to his theory of public memorialization. In <em>Electronic Monuments</em>, Ulmer (2005) calls for the creation of monuments designed to commemorate “any event of loss whose mourning helps define a community” (p. xxxiii). For Ulmer, electronic monuments should serve to TRACE the connections between cultural values (e.g. driving a car) and the hidden social costs paid for upholding them (e.g. cyclist deaths, pollution, suburban sprawl, etc.). Electronic monuments are speculative signifiers of communal trauma, and their purpose is not to produce logical arguments, but to catalyze affective public responses to pressing social and cultural issues (Ulmer, 2005, p. 14, 33).</p>
+
+						<p>One of the key rhetorical affordances of AR technology is the interaction between physical and digital content. Unlike virtual reality, which completely immerses the user in a digital world, AR utilizes the user’s physical context as a key rhetorical component of the experience. “Death Drive(r)s” augments the physical space of a busy city street by overlaying a digital “ghost bike” at locations where a cyclist has been killed or seriously injured by a car (fig. 3).</p>
+						
+				<center><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/157500612?title=0&byline=0&portrait=0" width="400" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<p><a href="https://vimeo.com/157500612">inventionstreams</a> from <a href="https://vimeo.com/user49568746">Ghost Bikes</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div></center>
+						
+						<p>[MyrtleAve] <br>
+						Figure #: Ghost bike augmentation at the intersection of Myrtle Avenue and 8th Street in downtown Jacksonville.</p>
+
+						<p>In selecting trigger images for this project, we sought out signs and images typically overlooked or considered rhetorically mundane, such as stop signs or street names. On the “Death Drive(r)s” account page, the user can view the augmentable images associated with each location (fig. 4). Aurasma also allows users to set coordinate restrictions on trigger images that might also appear in other locations, such as a pedestrian crosswalk sign. With this functionality, we were able to augment specific road signs even if the image also appeared elsewhere in the city (fig. 5).</p>
+
+						<p>[AurasmaScreenshot] <br>
+						Figure #: Users can access the trigger image locations on the “Death Drive(r)s” account page.</p>
+
+						<p>[AurasmaLocationTrigger] <br>
+						Figure #: Specific trigger image locations using Aurasma’s Google Maps integration.</p>
+
+						<p>Similar to the appropriated cultural materials of Situationist artworks, these signs operate on the periphery of public concern; they are only noticed when they break down or change in some way (e.g. when a ghost bike is attached to it.). By augmenting these signs, the application (super)imposes electronic monuments onto the routinized imagery of petroculture. The site-specific quality of the project creates a dialectical tension between the user’s physical environment and the digital overlay. The “apparition” of the digital bike augments the material rhetoric (car horns, screeching tires, speeding cars, etc.) of the city street, transforming the routine sights and sounds of a petroculture into signifiers of death.</p>
+							
+				<center><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/157500613?title=0&byline=0&portrait=0" width="400" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<p><a href="https://vimeo.com/157500613">konsult</a> from <a href="https://vimeo.com/user49568746">Ghost Bikes</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div></center>
+						
+						<p>With economic analysts predicting mobile augmented reality technology to skyrocket into a $120 billion industry by 2020, it seems that this emerging medium is poised to revolutionize how digital content intersects with public spaces (Digi-Capital, 2015). In our next section, we demonstrate how electronic monuments such as “Death Drive(r)s” provide alternate frameworks for rhetorical action in mundane, public spaces by exchanging traditional genres of public deliberation (speeches, debates, etc.) for more affective and emergent discourse structures.</p>
+
+						<p><strong>Trigger Images</strong></p>
+
+						<p>[PedSign] <br>
+						Figure #: Intersection of 3rd Street and East Coast Drive</p>
+
+						<p>[StopSign] <br>
+						Figure #: Intersection of Chafee Road and Williams Avenue</p>
+
+						<p>[8thStreet] <br>
+						Figure #: Intersection of Myrtle Avenue and 8th Street</p>
+					</div>
+					<center>
+					<ul class="icons">
+							<li title="move forward"><a href="#five" class="icon center fa-bicycle fa-3x scrolly"><span class="label"></span></a><h3>move forward</h3></li>
+							<li title="go backward"><a href="#three" class="icon center fa-car fa-3x scrolly"><span class="label"></span></a><h3>go backward</h3></li>
+					</ul>
+					</center>
+				</div>
+			</section>
+		
+		
+		<!-- Five -->
+		<section id="five" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="images/pic07.jpg" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<h2>Social Advocacy in Mundane Spaces: Toward Emergent Public Discourses</h2><a href="#six" class="button special scrolly small">Skip Section</a><br><br>
+						</header>
+						<p>In his seminal essay “Publics/Counterpublics,” Michael Warner (2002) argued that authentic public discourses must contain emergent qualities, writing that a public “can only produce a sense of belonging and activity if it is self-organized through discourse rather than through an external framework” (p. 415). Because it does not exist prior to discourse, a “public” is less an objective entity susceptible to persuasion than an emergent network of rhetorical acts (Warner, 2002, p. 413). Of course, as Jenny Rice (2012) pointed out, public rhetorics always run the risk of devolving into more static and divisive genres of public deliberation (p. 5). This subject position, which Rice terms the “exceptional public subject,” obfuscates any clear path to effective public action and/or advocacy by residing between the boundaries of public and private life, thus sustaining a space of public discourse marked by apathy and distance.</p>
+
+				<center><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/157501150?title=0&byline=0&portrait=0" width="400" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+				<p><a href="https://vimeo.com/157501150">fifthestate</a> from <a href="https://vimeo.com/user49568829">Ghost Bikes</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div></center>
+							
+						<p>Public subjectivities of exception are inextricable from the material structures that produce them, and, to a greater or lesser extent, all members of a society participate in this public subject position. Public spaces are sustained as mundane through discourses of exception, or an unconscious disengagement from the rhetoricality of one’s environment. As a member of a community of drivers, for instance, I feel a weak connection to the consequences that my driving has on society as a whole, a feeling reinforced by a discourse of self-exception (i.e. “I drive a fuel-efficient car,” “I vote for increased funding for public transit,” “I don’t drive under the influence,” “I have never hit a cyclist,” etc.). The problem is not that discourses of self-exception are untrue, but rather that they reinforce apathetic responses to public issues: “I” have done nothing to create this problem. In order to create a critical space through which more engaged public subjectivities can emerge, Rice (2012) argues that we must take an approach to public rhetoric that “understands publics and their discourses as the best site for making interventions into material spaces” (p. 7). To make effective rhetorical interventions into public issues, social advocacy must operate within the same discursive networks (digital as well as physical) through which disparate publics already “intersect” rather than imposing unfamiliar “external framework[s]” (Warner, 2002, p. 415).</p>
+
+						<p><em>TRACE</em>’s “Death Drive(r)s” application promotes emergent public discourse through the juxtapositional logic of augmented reality (fig. 6). The application creates a perspectival shift for how motion and stasis interact within the public space of an intersection. Typically, when confronting an intersection, the public desires motion, and any form of stillness encountered within this space (e.g. stopping at a red light, a cyclist being struck by a vehicle, etc.) is unwanted. Whereas motion prompts forgetting and erasure, reflection prompts remembrance and connectivity. Within the public space of the intersection, stasis is error and anomaly, a temporary rupture in the incessant motion of petroculture. Conversely, “Death Drive(r)s” inverts this motion/stasis hierarchy by superimposing digital versions of ghost bikes onto the physical space of the intersection. These electronic monuments promote stillness and reflection as desired states of being within the mundane public space of the intersection.</p>
+
+						<p>[ChaffeeRoadBike] <br>
+						Figure #: Trigger image location for Chaffee Road and Williams Avenue</p>
+
+						<p>Memorials invite stillness and contemplation, an affective posture in direct conflict with the material rhetoric of a busy street, which is a passageway, a space of motion, and any stillness that occurs within an intersection is forced and undesired. Through this, “Death Drive(r)s” invokes what locative media artist Paula Levine (2014) refers to as “spatial dissonance.” For Levine, spatial dissonance occurs “when information about [a] space stands in conflict with the local and personal experiences of that space” (p. 144). Because the digital and physical components of an augmented reality application mutually constitute one another, an element of dissonance is inscribed into the rhetorical core of the medium. The overlays seeks to subvert culturally normalized perceptions of a mundane public space. The application does not ask the user to do (or to think) a specific thing. Rather, it merely attempts to invoke a sense of “spatial dissonance” between the information provided by the digital overlays and the mundane, petrocentric signifiers on which they are inscribed.</p>
+
+						<p>The sensorial experience of mundane spaces becomes normalized through repetition, thus weakening the public’s desire and/or ability to approach these spaces as unique, significant, and capable of change. Mundane public spaces are designed according to functional concerns (e.g. driving) that override any aesthetics of dwelling. When I drive down a busy road, I perceive it in terms of its ability to help me accomplish a specific goal: moving from one place to another. The road is an interface for driving, and elements that conflict with the smooth functioning of this interface are quickly discarded and forgotten.  My spacious mid-size hatchback with A/C and radio insulates me from the noise and air pollution circulating within this space, shielding me from a sensorial engagement with the effects of petroculture and its material impact on public space. An urban intersection is a mundane space; it is a continuous battle between cars, cyclists, and pedestrians as they all jockey for a transient territorial claim to this space. The affective stance of the urban intersection oscillates between attraction and repulsion: a position within this space is desired only insofar as it can be relinquished, or forgotten, as soon as possible. Because the physical infrastructure of petroculture requires the replication of the intersection across the urban landscape, this affective oscillation becomes routinized within the urban subject, and a rhetorical stance of forgetting is inscribed into the material discourse of public interaction. Consequently, the public’s predominant interactions with sprawling public spaces become unwelcome, insular experiences that allow its members to maintain rhetorical distance from the social and cultural consequences such spaces have upon the urban environment.</p>
+
+						<p>In <em>The Ecological Thought</em>, Timothy Morton (2012) described ecology as “all the ways we imagine how we live together” (p. 4). In “ecological” terms, then, the urban intersection reinforces a public imaginary that conceives of “living together” as a contested and isolated experience that exempts “me” from any feelings of ecological significance within this public space. “Death Drive(r)s” seeks to reshape “the ways we imagine how we live together” by providing a disjunctive space of public discourse that collapses the apathy-inducing distance between a cultural value (driving) and its effects (cyclist deaths). The application invites users to inhabit the public space of a cyclist’s death (typically a busy urban intersection) as a pedestrian or cyclist. Because they must be physically present at the location in order to access the augmentation, users of the app are encouraged to engage with the feeling of out-of-placeness that comes from traversing a city like Jacksonville as a pedestrian.</p>
+
+						<p>When a physical location is augmented with a digital ghost bike, both the bike and the location participate within emergent rhetorical configurations as users experiences one in terms of the other. Moreover, the virtuality of the ghost bike reflects the relegation of cyclist casualties to society’s collective unconscious; the bikes (dis)appear as an electronic monument to the public’s unconscious acceptance of death every time we get behind the wheel of a car.  In this way, “Death Drive(r)s” reveals how a mundane public space like an intersection is already operating as a site of public discourse, or a material space through which a society’s values circulate. With mobile augmented reality technology, external rhetorical elements can be superimposed onto existing discursive frameworks, thus fostering an emergent level of public discourse that intervenes into the routinized rhetorical actions of mundane public spaces.</p>
+
+					</div>
+					<center>
+					<ul class="icons">
+							<li title="move forward"><a href="#six" class="icon center fa-bicycle fa-3x scrolly"><span class="label"></span></a><h3>move forward</h3></li>
+							<li title="go backward"><a href="#four" class="icon center fa-car fa-3x scrolly"><span class="label"></span></a><h3>go backward</h3></li>
+					</ul>
+					</center>
+				</div>
+			</section>
+
+		
+		<!-- Six -->
+		<section id="six" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="images/pic08.jpg" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<h2>Dead End Streets (Conclusion)</h2><a href="#seven" class="button special scrolly small">Skip Section</a><br><br>
+						</header>
+						
+						<p>Ghost bikes magnify the impact of petrocentrism by forcing a public to encounter the invisible costs of automobile culture. They challenge the core values of petrocentrism (e.g. privacy, speed, forgetting, etc.) by emphasizing public contemplation, stillness, and reflection. They deny a sense of “passing through” space by forcing us to recognize mundane spaces as unique, locations through which ideologies and histories intersect. They use private encounters to speak to public concerns. More than statistics or advertisements, ghost bikes reach us by insisting on the importance of the personal, individual, communities where they appear. They reach through the armor of petroculture at its only point of entry: affect.</p>
+
+						<p>The material rhetoric of the ghost bike is ephemeral. Archival websites like Ghostbikes.org collect the remnants of these events, but they do not preserve the emplaced qualities of the material bicycle. “Death Drive(r)s” partners with the choric engagement of public space already present in vélorutionary culture by preserving ghost bikes as electronic monuments, thereby fostering emergent rhetorical connections between hidden public values and the material conditions responsible for producing them. Extensions of this project could seek collaborations with cycling advocacy groups in other cities where ghost bikes are routinely removed and forgotten. An inter-state network of digital ghost bikes would work to highlight the hegemonic presence of petrocentric values within America’s urban landscape, and it would move us that much closer to resisting the grand narrative of petroculture and reclaiming the idea of automobility from the car industry.</p>
+
+					</div>
+					<center>
+					<ul class="icons">
+							<li title="move forward"><a href="#seven" class="icon center fa-bicycle fa-3x scrolly"><span class="label"></span></a><h3>move forward</h3></li>
+							<li title="go backward"><a href="#five" class="icon center fa-car fa-3x scrolly"><span class="label"></span></a><h3>go backward</h3></li>
+					</ul>
+					</center>
+				</div>
+			</section>
+		
+		<!-- Seven -->
+		<section id="seven" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="images/pic09.jpg" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<h2>Parallax (About the Website)</h2><a href="#eight" class="button special scrolly small">Skip Section</a><br><br>
+						</header>
+						<p>This website employs a parallax design in an attempt to embody a kind of intersectionality, a term originally espoused by Kimberlé Crenshaw (1991) to describe the way that “multilayered and routinized forms of domination…often converge” in the intersections of  race, gender, and violence toward women. Likewise, this webtext reads bicycle fatalities as a combination of attitudes, including racism which contributes to “white flight” and urban sprawl, petrocentric automobile culture, and unflinching reliance on fossil fuels among many others. Through ghost bikes, we espouse a bicycle countercultural critique, and we enact this critique using digital technology. Similar to augmented reality, parallax websites overlay images or text with multiple layers, using scrolling to induce a shift in perspective. Like a roadside ghost bike, viewed differently by a cyclist or a motorist, parallax works by moving between different viewpoints, be they of an object or an abstract value. Through our design, we hoped to intersect form and function. Like the compounded nature of environmental problems, we know that resisting and challenging petrocultural values is impossible without finding the intersections of anti-racist, feminist, ecological, and socio-economic discourses.</p>
+					</div>
+					<center>
+					<ul class="icons">
+							<li title="move forward"><a href="#eight" class="icon center fa-bicycle fa-3x scrolly"><span class="label"></span></a><h3>move forward</h3></li>
+							<li title="go backward"><a href="#six" class="icon center fa-car fa-3x scrolly"><span class="label"></span></a><h3>go backward</h3></li>
+					</ul>
+					</center>
+				</div>
+			</section>
+
+		<!-- Eight -->
+		<section id="eight" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="images/pic10.jpg" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<h2>References</h2><a href="#footer" class="button special scrolly small">Skip Section</a><br><br>
+						</header>
+						
+						<p>Amiker, Francesca &amp; Jim Piggot. (2015, November 6). Jaguars, city propose $90m amphitheater, indoor practice field, stadium improvements. <em>News4Jax</em>. Retrieved February 1, 2016 from <a href="http://www.news4jax.com/news/local/jaguars-city-propose-90m-amphitheater-indoor-practice-field-stadium-improvements">http://www.news4jax.com/news/local/jaguars-city-propose-90m-amphitheater-indoor-practice-field-stadium-improvements</a></p>
+
+						<p>Barthes, Roland. (1984). Translated by Richard Howard. <em>Camera lucida: reflections on photography</em>. New York: Hill &amp; Wang.</p>
+
+						<p>Crenshaw, K. (1991), “Mapping the Margins: Intersectionality, Identity Politics, and Violence Against Women of Color,” <em>Stanford Law Review</em> 43. p. 1241-1299.</p>
+
+						<p>comScore. (2014). <em>The U.S. Mobile App Report</em>.</p>
+
+						<p>Derrida, Jacques (1993). <em>Specters of Marx The State of the Debt, the Work of Mourning and the New International</em>. Trans. Peggy Kamuf</p>
+
+						<p>Digi-Capital. (2014, April). Augmented/virtual reality to hit $150 billion disrupting mobile by 2020 [Blog post]. Retrieved January 14, 2016, from <a href="http://www.digi-capital.com/news/2015/04/augmentedvirtual-reality-to-hit-150-billion-disrupting-mobile-by-2020/#.Vpe8E-grIdU">http://www.digi-capital.com/news/2015/04/augmentedvirtual-reality-to-hit-150-billion-disrupting-mobile-by-2020/#.Vpe8E-grIdU</a></p>
+
+						<p>D.K. “Cycling in Florida: Uneasy Rider.” (2014, 21 October) <em>The Economist</em>. Retrieved January 14, 2016, from <a href="http://www.economist.com/blogs/democracyinamerica/2014/10/cycling-florida">http://www.economist.com/blogs/democracyinamerica/2014/10/cycling-florida</a></p>
+
+						<p>Duane, Daniel (2013, 9 November) “Is It O.K. to Kill Cyclists?” <em>The New York Times Sunday Review</em>. February 1, 2016 from <a href="http://www.nytimes.com/2013/11/10/opinion/sunday/is-it-ok-to-kill-cyclists.html?_r=0">http://www.nytimes.com/2013/11/10/opinion/sunday/is-it-ok-to-kill-cyclists.html?_r=0</a></p>
+
+						<p>Dumas, Michael (2013). “Are Ghost Bikes the best memorial for cyclists who have been killed? (poll).” <em>AL.com</em>. Retrieved February 1, 2016 from <a href="http://blog.al.com/live/2013/11/are_ghost_bikes_the_best_memor.html">http://blog.al.com/live/2013/11/are_ghost_bikes_the_best_memor.html</a></p>
+
+						<p>Ewing, Reid, Rolf Pendall, &amp; Don Chen. (2002). Measuring sprawl and its impact. Smart Growth America. Retrieved February 1, 2016 from <a href="http://www.smartgrowthamerica.org/documents/MeasuringSprawl.PDF">http://www.smartgrowthamerica.org/documents/MeasuringSprawl.PDF</a></p>
+
+						<p>Furness, Zack (2010). <em>One Less Car: Bicycling and the Politics of Automobility</em>. Philadelphia: _ Temple University Press_.</p>
+
+						<p>Geroimenko, Vladimir (Ed.). (2014). <em>Augmented reality art: from an emerging technology to a novel creative medium</em>. Switzerland: Springer.</p>
+
+						<p>Lane, Melissa (2012). <em>Eco-Republic</em>. New Jersey: Princeton University Press.</p>
+
+						<p>Levine, Paula (2014). On common ground: here as there. In Jason Farman (Ed.), <em>The mobile story: narrative practices with locative technologies</em> (pp. 143-158). New York: Routledge.</p>
+
+						<p>Morey, Sean (n.d). “Roadkill Tollbooth.” Retrieved January 14, 2016 from roadkilltollbooth.com.</p>
+
+						<p>Morton, Timothy (2012). <em>The ecological thought</em>. Cambridge: Harvard University Press.</p>
+
+						<p>——. (November 2015). “Professor Morton, How Do You Explain Racism and Speciesism?” <em>Ecology without Nature</em> [Blog]. Retrieved January 14, 2016, from <a href="http://ecologywithoutnature.blogspot.com/2015/11/professor-morton-how-do-you-explain.html">http://ecologywithoutnature.blogspot.com/2015/11/professor-morton-how-do-you-explain.html</a></p>
+
+						<p>——. (2013). <em>Hyperobjects: Philosophy and Ecology After the End of the World</em>. University of Minnesota Press.</p>
+
+						<p>Perelman, Chaim, and Lucie Olbrechts-Tyteca (1971). <em>The New Rhetoric: A Treatise on Argumentation</em>. Trans. John Wilkinson and Purcell Weaver. Notre Dame: U of Notre Dame Press.</p>
+
+						<p>Petrocultures. University of Alberta. Retrieved January 14 from <a href="http://petrocultures.com/about/">http://petrocultures.com/about/</a></p>
+
+						<p>“Racing Bicycle.” 3D model. Submitted by user silviuq12 on TF3DM. Retrieved from <a href="http://tf3dm.com/3d-model/racing-bicycle-82526.html">http://tf3dm.com/3d-model/racing-bicycle-82526.html</a></p>
+
+						<p>Rice, Jenny. (2012). <em>Distant publics: development rhetoric and the subject of crisis</em>. Pittsburgh: University of Pittsburgh Press.</p>
+
+						<p>Rickert, Thomas (2007). “Towards the Chora: Kristeva, Derrida, and Ulmer on Emplaced Invention.” <em>Philosophy and Rhetoric</em>. 40.3. p. 251-273. Print.</p>
+
+						<p>Sample, Mark. Location is not compelling (until it is haunted). In Jason Farman (Ed.), <em>The mobile story: narrative practices with locative technologies</em> (pp. 68-78). New York: Routledge.</p>
+
+						<p>State of Florida. (February 2016) Department of Transportation. <em>Florida Pedestrian and Bicycle Strategic Safety Plan</em>. Retrieved January 14, 2016, from <a href="http://www.dot.state.fl.us/safety/2A-Programs/Bicycle-Pedestrian.shtm">http://www.dot.state.fl.us/safety/2A-Programs/Bicycle-Pedestrian.shtm</a></p>
+
+						<p><em>TRACE</em>. (n.d.). <em>ARCs: augmented reality criticisms</em>. Retrieved from <a href="http://trace.english.ufl.edu/projects/arcs/">http://trace.english.ufl.edu/projects/arcs/</a></p>
+
+						<p>Ulmer, Gregory. (2005). <em>Electronic monuments</em>. Minneapolis: University of Minnesota Press.</p>
+
+						<p>——. (1994). <em>Heuretics: The Logic of Invention.</em> Baltimore, MD: John Hopkins University Press.</p>
+
+						<p> Walker, Peter. (November 2011). “Ghost bikes: memorials to road victims blamed for putting people off cycling”. <em>The Guardian</em>. Web.Retrieved January 14, 2016, from <a href="http://www.guardian.co.uk/lifeandstyle/2011/nov/10/ghost-bikes-memorials-cycling-victims">http://www.guardian.co.uk/lifeandstyle/2011/nov/10/ghost-bikes-memorials-cycling-victims</a></p>
+						
+						<p>Warner, Michael. (2012). Publics/Counterpublics. <em>Quarterly Journal of Speech, 88</em> (4).</p>
+						
+					</div>
+					<center>
+					<ul class="icons">
+							<li title="move forward"><a href="#footer" class="icon center fa-bicycle fa-3x scrolly"><span class="label"></span></a><h3>move forward</h3></li>
+							<li title="go backward"><a href="#seven" class="icon center fa-car fa-3x scrolly"><span class="label"></span></a><h3>go backward</h3></li>
+					</ul>
+					</center>
+				</div>
+			</section>
+		
+		
+
+
+		<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<header class="major">
+						<h2>Author Bios & Acknowledgements</h2>
+												
+					</header>
+					<h3>About the Authors</h3>
+							<p><span class="image left"><img src="images/jones.jpg" alt="" /></span><a href="http://ecopoiesis.com">Madison Jones</a> is a doctoral student specializing in rhetoric and writing studies in the Department of English at the University of Florida. He is interested in intersections of ecology, technology, and materiality in writing theory.</p>
+							<p><span class="image right"><img src="images/greene.jpg" alt="" /></span><a href="http://jacobwgreene.github.io/index.html">Jacob Green</a> is a doctoral student specializing in writing and media studies in the Department of English at the University of Florida. His dissertation research explores applications of augmented reality as an emerging writing technology and genre of public discourse. His other research interests include circulation studies, visual rhetoric, composition pedagogy, and environmental rhetoric.</p>
+						
+						<h3>Special Thanks To:</h3>
+						<p>Sean Morey and Pearce Durst for their feedback on a draft of this webtext. Thanks to Greg Ulmer for granting the interview and discussing the project through its development and to Sid Dobrin and the TRACE innovation team.</p>
+					<center>
+					<ul class="icons">
+							<li title="back to the top"><a href="#header" class="icon center fa-bicycle fa-3x scrolly"><span class="label"></span></a><h3>to the top!</h3></li>
+							<li title="go backward"><a href="#eight" class="icon center fa-car fa-3x scrolly"><span class="label"></span></a><h3>go backward</h3></li>
+					</ul>
+					</center>
+					<hr>
+					<p>To find out more about ghost bikes, visit <a href="http://ghostbikes.org/">Ghostbikes.org</a>, and check out the <a href="http://ghostbikesfilm.com/">Ghost Bikes Film Project</a>:
+					
+				<iframe src="https://player.vimeo.com/video/8428754" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<p><a href="https://vimeo.com/8428754">The Ghost Bikes Film Project</a> from <a href="https://vimeo.com/meaghanwilbur">meaghan wilbur</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+					
+					<h4>"Get a bicycle. You will not regret it. If you live." <br>—Mark Twain, "Taming the Bicycle"</h4> 
+				</div>
+				<footer>
+					<ul class="copyright">
+						<li>This site's theme is modified from Highlights, by <a href="http://html5up.net">HTML5 UP</a>, under the CC-BY 3.0 license.</li>
+						<li><a href="docs/imagepermissions.pdf">Image Permissions</a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<!--map embed script-->
+			<script>
+
+					function initMap() {
+					
+					// bike marker coordinates
+					var odom = {lat: 30.347, lng: -81.675};
+					var roberson = {lat: 30.332246, lng: -81.656216};
+					var jones = {lat: 30.305941, lng: -81.6371865};
+					var huish = {lat: 30.3280545, lng: -81.3974017};
+					var hartley = {lat: 30.3234419, lng: -81.8484281};
+					var rettinger = {lat: 30.1418884, lng: -81.5465488};
+					
+					//phone marker coordinates
+					var ghost = {lat: 30.387092, lng: -81.849174};
+					var placing = {lat: 30.420256, lng: -81.697426};
+					var augmented = {lat: 30.244239, lng: -81.610222};
+					var social = {lat: 30.416703, lng: -81.412125}; 
+					
+					var currentInfoWindow = null;
+					
+					// Create an array of styles.
+					  var styles = [
+						{
+						  stylers: [
+							{ hue: "#00ffe6" },
+							{ saturation: -20 }
+						  ]
+						},{
+						  featureType: "road",
+						  elementType: "geometry",
+						  stylers: [
+							{ lightness: 100 },
+							{ visibility: "simplified" }
+						  ]
+						},{
+						  featureType: "road",
+						  elementType: "labels",
+						  stylers: [
+							{ visibility: "off" }
+						  ]
+						}
+					  ];
+					
+					  // Create a new StyledMapType object, passing it the array of styles,
+					  // as well as the name to be displayed on the map type control.
+					  var styledMap = new google.maps.StyledMapType(styles,
+						{name: "Polyculture"});
+					  
+					  var petro = new google.maps.StyledMapType(styles,
+						{name: "Petroculture"});
+					
+					var options = {					
+					zoom: 10,
+					center: jones,
+					useMapTypeControl: true,
+					 mapTypeControlOptions: {
+					mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+    }
+					}
+					
+					//map initialization
+					var map = new google.maps.Map(document.getElementById('map'), options);
+					
+					map.mapTypes.set(petro, styledMap);
+					map.setMapTypeId(petro);
+			
+					//Eddie Odom infowindow
+					var odomString = '<div id="content">'+
+						'<div id="siteNotice">'+
+						'</div>'+
+						'<h1 id="firstHeading" class="firstHeading">Eddie Odom</h1> 12/28/2008' +
+						'<div id="bodyContent">'+
+						'<p>&#34He was well acquainted with the neighborhood. He knew the surroundings...I dont know what happened.&#34</p>'+
+						'<p><a href="http://ghostbikes.org/jacksonville/eddie-roosevelt-odom">'+
+						'http://ghostbikes.org/jacksonville/eddie-roosevelt-odom</a> '+
+						'</p>'+
+						'</div>'+
+						'</div>';
+			
+					var odomwindow = new google.maps.InfoWindow({
+					  content: odomString,
+					  maxWidth: 300
+					});
+			
+					var markerodom = new google.maps.Marker({
+					  position: odom,
+					  map: map,
+					  icon: 'images/icon2.png',
+					  title: 'Eddie Odom'
+					});
+					markerodom.addListener('click', function() {
+					   if (currentInfoWindow != null)
+					   { 
+						  currentInfoWindow.close(); 
+					   } 
+					odomwindow.open(map, markerodom);
+					currentInfoWindow = odomwindow;
+					  
+					});
+					
+					//Joel Roberson infowindow
+					var robersonString = '<div id="content">'+
+						'<div id="siteNotice">'+
+						'</div>'+
+						'<h1 id="firstHeading" class="firstHeading">Joel Roberson Jr.</h1> 4/6/2010'+
+						'<div id="bodyContent">'+
+						'<p>&#34The 23 year old driver, Sgt Bryan Gullet, was charged with misdemeanor death by vehicle, failing to reduce speed to avoid a collision, and failure to maintain a lane.&#34</p>'+
+						'<img width="200" src="images/roberson.jpg">' +
+						'<p><a href="http://ghostbikes.org/jacksonville/joel-roberson-jr">'+
+						'http://ghostbikes.org/jacksonville/joel-roberson-jr</a> '+
+						'</p>'+
+						'</div>'+
+						'</div>';
+			
+					var robersonwindow = new google.maps.InfoWindow({
+					  content: robersonString,
+					  maxWidth: 300
+					});
+			
+					var markerroberson = new google.maps.Marker({
+					  position: roberson,
+					  map: map,
+					  icon: 'images/icon2.png',
+					  title: 'Joel Roberson Jr.'
+					});
+					markerroberson.addListener('click', function() {
+					  if (currentInfoWindow != null)
+					   { 
+						  currentInfoWindow.close(); 
+					   } 
+					robersonwindow.open(map, markerroberson);
+					currentInfoWindow = robersonwindow;
+					});
+					
+					//Johnny Jones infowindow
+					var jonesString = '<div id="content">'+
+						'<div id="siteNotice">'+
+						'</div>'+
+						'<h1 id="firstHeading" class="firstHeading">Johnny Jones</h1> 6/23/2008'+
+						'<div id="bodyContent">'+
+						'<p>&#34We discovered the crossing signal button on the south side of the road did not work. We pushed the button every few seconds. We pushed it continuously. We pushed the button more than 40-times over a 5-1/2 minute time period and several cycles of the traffic lights from all directions.&#34</p>'+
+						'<img width="200" src="images/jones.jpg">' +
+						'<p><a href="http://ghostbikes.org/jacksonville/johnny-jones">'+
+						'http://ghostbikes.org/jacksonville/johnny-jones</a> '+
+						'</p>'+
+						'</div>'+
+						'</div>';
+			
+					var joneswindow = new google.maps.InfoWindow({
+					  content: jonesString,
+					  maxWidth: 300
+					});
+			
+					var markerjones = new google.maps.Marker({
+					  position: jones,
+					  map: map,
+					  icon: 'images/icon2.png',
+					  title: 'Johnny Jones'
+					});
+					markerjones.addListener('click', function() {
+					  if (currentInfoWindow != null)
+					   { 
+						  currentInfoWindow.close(); 
+					   } 
+					joneswindow.open(map, markerjones);
+					currentInfoWindow = joneswindow;
+					});
+					
+					//Robert Huish infowindow
+					var huishString = '<div id="content">'+
+						'<div id="siteNotice">'+
+						'</div>'+
+						'<h1 id="firstHeading" class="firstHeading">Robert Huish</h1> 11/28/2011'+ 
+						'<div id="bodyContent">'+
+						'<p>&#34Huish was riding a bicycle with friends about 1:50 a.m. at Third Street and East Coast Drive when Jacobs ran into him with his Isuzu Rodeo and kept driving.&#34</p>'+
+						'<img width="200" src="images/huish.jpeg">' +
+						'<p><a href="http://jacksonville.com/news/crime/2010-12-11/story/residents-near-site-atlantic-beach-hit-and-run-say-intersection-wild#ixzz1fiX78o7s">'+
+						'http://jacksonville.com/news</a> '+
+						'</p>'+
+						'</div>'+
+						'</div>';
+			
+					var huishwindow = new google.maps.InfoWindow({
+					  content: huishString,
+					  maxWidth: 300
+					});
+			
+					var markerhuish = new google.maps.Marker({
+					  position: huish,
+					  map: map,
+					  icon: 'images/icon2.png',
+					  title: 'Robert Huish'
+					});
+					markerhuish.addListener('click', function() {
+					  if (currentInfoWindow != null)
+					   { 
+						  currentInfoWindow.close(); 
+					   } 
+					huishwindow.open(map, markerhuish);
+					currentInfoWindow = huishwindow;
+					});
+					
+					//Jack Hartley infowindow
+					var hartleyString = '<div id="content">'+
+						'<div id="siteNotice">'+
+						'</div>'+
+						'<h1 id="firstHeading" class="firstHeading">Jack Hartley</h1> 2/3/2009'+
+						'<div id="bodyContent">'+
+						'<p>&#34Drivers of motor vehicles have one job to do when driving. That is to simply not hit anything. Is that really asking too much?&#34 -bikejax.org</p>'+
+						'<p><a href="http://ghostbikes.org/jacksonville/jack-hartley">'+
+						'http://ghostbikes.org/jacksonville/jack-hartley</a> '+
+						'</p>'+
+						'</div>'+
+						'</div>';
+			
+					var hartleywindow = new google.maps.InfoWindow({
+					  content: hartleyString,
+					  maxWidth: 300
+					});
+			
+					var markerhartley = new google.maps.Marker({
+					  position: hartley,
+					  map: map,
+					  icon: 'images/icon2.png',
+					  title: 'Jack Hartley'
+					});
+					markerhartley.addListener('click', function() {
+					  if (currentInfoWindow != null)
+					   { 
+						  currentInfoWindow.close(); 
+					   } 
+					hartleywindow.open(map, markerhartley);
+					currentInfoWindow = hartleywindow;
+					});
+					
+					//Chastity Rettinger infowindow
+					var rettingerString = '<div id="content">'+
+						'<div id="siteNotice">'+
+						'</div>'+
+						'<h1 id="firstHeading" class="firstHeading">Chastity Rettinger</h1> 2/3/2010'+
+						'<div id="bodyContent">'+
+						'<p>&#34Shortly before noon, a man driving eastbound in the right-hand turn lane attempted to switch lanes across the bike lane...The bike lane runs between the straight eastbound lanes and the turn lane.&#34</p>'+
+						'<img width="200" src="images/rettinger.jpg">' +
+						'<p><a href="http://jacksonville.com/news/metro/crime/2009-04-13/story/1_dead_1_injured_in_southside_crash_involving_bicycles">'+
+						'http://jacksonville.com/news</a> '+
+						'</p>'+
+						'</div>'+
+						'</div>';
+			
+					var rettingerwindow = new google.maps.InfoWindow({
+					  content: rettingerString,
+					  maxWidth: 300
+					});
+			
+					var markerrettinger = new google.maps.Marker({
+					  position: rettinger,
+					  map: map,
+					  icon: 'images/icon2.png',
+					  title: 'Chastity Rettinger'
+					});
+					markerrettinger.addListener('click', function() {
+					  if (currentInfoWindow != null)
+					   { 
+						  currentInfoWindow.close(); 
+					   } 
+					rettingerwindow.open(map, markerrettinger);
+					currentInfoWindow = rettingerwindow;
+					});
+					
+					//ghost infowindow
+					var ghostString = '<div id="content">'+
+						'<div id="siteNotice">'+
+						'</div>'+
+						'<h1 id="firstHeading" class="firstHeading"><a href="testpage.html#two">Ghost Bikes: History and Culture</a></h1>'+
+						'<div id="bodyContent">'+
+						'<p>&#34It is difficult to hear the counter-narrative of a silent ghost bike through the roar of an engine; it is harder still to see from high in the cab how petroculture locks us in unsustainable spaces by design.&#34</p>'+
+						'<p><a href="testpage.html#two">'+
+						'Take the scenic route</a> '+
+						'</p>'+
+						'</div>'+
+						'</div>'+
+						'</div>';
+			
+					var ghostwindow = new google.maps.InfoWindow({
+					  content: ghostString,
+					  maxWidth: 300
+					});
+			
+					var markerghost = new google.maps.Marker({
+					  position: ghost,
+					  map: map,
+					  icon: 'images/phone.png',
+					  title: 'Ghost Bikes: History and Culture'					  
+					});
+					markerghost.addListener('click', function() {
+					  if (currentInfoWindow != null)
+					   { 
+						  currentInfoWindow.close(); 
+					   } 
+					ghostwindow.open(map, markerghost);
+					currentInfoWindow = ghostwindow;
+					});
+					
+					//placing infowindow
+					var placingString = '<div id="content">'+
+						'<div id="siteNotice">'+
+						'</div>'+
+						'<h1 id="firstHeading" class="firstHeading"><a href="testpage.html#three">Placing the Argument</a></h1>'+
+						'<div id="bodyContent">'+
+						'<p>&#34Similar to many other U.S. cities, the busy intersections and roadways of Jacksonville are simply &#39places of passage,&#39 not sites to interact with other members of the community (Ulmer, 127).&#34</p>'+
+						'<p><a href="testpage.html#three">'+
+						'Take the scenic route</a> '+
+						'</p>'+
+						'</div>'+
+						'</div>'+
+						'</div>';
+			
+					var placingwindow = new google.maps.InfoWindow({
+					  content: placingString,
+					  maxWidth: 300
+					});
+			
+					var markerplacing = new google.maps.Marker({
+					  position: placing,
+					  map: map,
+					  icon: 'images/phone.png',
+					  title: 'Placing the Argument'
+					});
+					markerplacing.addListener('click', function() {
+					  if (currentInfoWindow != null)
+					   { 
+						  currentInfoWindow.close(); 
+					   } 
+					placingwindow.open(map, markerplacing);
+					currentInfoWindow = placingwindow;
+					});
+					
+					//augmented infowindow
+					var augmentedString = '<div id="content">'+
+						'<div id="siteNotice">'+
+						'</div>'+
+						'<h1 id="firstHeading" class="firstHeading"><a href="testpage.html#four">Augmented Reality Criticism</a></h1>'+
+						'<div id="bodyContent">'+
+						'<p>&#34The &#39apparition&#39 of the digital bike augments the material rhetoric (car horns, screeching tires, speeding cars, etc.) of the city street, transforming the routine sights and sounds of a petroculture into signifiers of death.&#34</p>'+
+						'<p><a href="testpage.html#four">'+
+						'Take the scenic route</a> '+
+						'</p>'+
+						'</div>'+
+						'</div>'+
+						'</div>';
+			
+					var augmentedwindow = new google.maps.InfoWindow({
+					  content: augmentedString,
+					  maxWidth: 300
+					});
+			
+					var markeraugmented = new google.maps.Marker({
+					  position: augmented,
+					  map: map,
+					  icon: 'images/phone.png',
+					  title: 'Augmented Reality Criticism'
+					});
+					markeraugmented.addListener('click', function() {
+					  if (currentInfoWindow != null)
+					   { 
+						  currentInfoWindow.close(); 
+					   } 
+					augmentedwindow.open(map, markeraugmented);
+					currentInfoWindow = augmentedwindow;
+					});
+					
+					//social infowindow
+					var socialString = '<div id="content">'+
+						'<div id="siteNotice">'+
+						'</div>'+
+						'<h1 id="firstHeading" class="firstHeading"><a href="testpage.html#five">Social Advocacy in Mundane Spaces</a></h1>'+
+						'<div id="bodyContent">'+
+						'<p>&#34Public spaces are sustained as mundane through discourses of exception, or an unconscious disengagement from the rhetoricality of one’s environment.&#34</p>'+
+						'<p><a href="testpage.html#five">'+
+						'Take the scenic route</a> '+
+						'</p>'+
+						'</div>'+
+						'</div>'+
+						'</div>';
+			
+					var socialwindow = new google.maps.InfoWindow({
+					  content: socialString,
+					  maxWidth: 300
+					});
+			
+					var markersocial = new google.maps.Marker({
+					  position: social,
+					  map: map,
+					  icon: 'images/phone.png',
+					  title: 'Social Advocacy in Mundane Spaces'
+					});
+					markersocial.addListener('click', function() {
+					  if (currentInfoWindow != null)
+					   { 
+						  currentInfoWindow.close(); 
+					   } 
+					socialwindow.open(map, markersocial);
+					currentInfoWindow = socialwindow;
+					});
+				  }
+				  
     </script>
-    <script 
-    src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer>
-    </script>
-  </body>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
+	</body>
 </html>
