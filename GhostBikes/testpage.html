@@ -20,7 +20,7 @@
 		<style>
 			#map {
 			height: 475px;
-			width: 450px;
+			width: 500px;
 			margin-left: auto;
 			margin-right: auto;
 		  }
@@ -668,16 +668,16 @@
 					function initMap() {
 					
 					// bike marker coordinates
-					var placing = {lat: 30.26144, lng: -81.579666};
-					var augmented = {lat: 30.3280545, lng: -81.3974017};
-					var ghost = {lat: 30.3234419, lng: -81.8484281};
-					var social = {lat: 30.1418884, lng: -81.5465488};
+					var placing = {lat: 30.361026, lng: -81.656914};
+					var augmented = {lat: 30.180154, lng: -81.702232};
+					var ghost = {lat: 30.296425, lng: -81.77227};
+					var social = {lat: 30.245425, lng: -81.516838};
 					
 					//phone marker coordinates
-					var hartley = {lat: 30.329027, lng: -81.906509};
-					var jones = {lat: 30.263812, lng: -81.634598};
-					var huish = {lat: 30.34325, lng: -81.45195};
-					var rettinger = {lat: 30.154627, lng: -81.597519}; 
+					var hartley = {lat: 30.314802, lng: -81.894493};
+					var jones = {lat: 30.253136, lng: -81.615372};
+					var huish = {lat: 30.326657, lng: -81.413498};
+					var rettinger = {lat: 30.17125, lng: -81.594772}; 
 					
 					var currentInfoWindow = null;
 					
@@ -844,7 +844,7 @@
 						'<div id="bodyContent">'+
 						'<p>&#34It is difficult to hear the counter-narrative of a silent ghost bike through the roar of an engine; it is harder still to see from high in the cab how petroculture locks us in unsustainable spaces by design.&#34</p>'+
 						'<p><a href="testpage.html#two">'+
-						'Take the scenic route</a> '+
+						'Take the detour</a> '+
 						'</p>'+
 						'</div>'+
 						'</div>'+
@@ -858,7 +858,7 @@
 					var markerghost = new google.maps.Marker({
 					  position: ghost,
 					  map: map,
-					  icon: 'images/phone.png',
+					  icon: 'images/detour2.png',
 					  title: 'Ghost Bikes: History and Culture'					  
 					});
 					markerghost.addListener('click', function() {
@@ -878,7 +878,7 @@
 						'<div id="bodyContent">'+
 						'<p>&#34Similar to many other U.S. cities, the busy intersections and roadways of Jacksonville are simply &#39places of passage,&#39 not sites to interact with other members of the community.&#34</p>'+
 						'<p><a href="testpage.html#three">'+
-						'Take the scenic route</a> '+
+						'Take the detour</a> '+
 						'</p>'+
 						'</div>'+
 						'</div>'+
@@ -892,7 +892,7 @@
 					var markerplacing = new google.maps.Marker({
 					  position: placing,
 					  map: map,
-					  icon: 'images/phone.png',
+					  icon: 'images/detour2.png',
 					  title: 'Placing the Argument'
 					});
 					markerplacing.addListener('click', function() {
@@ -912,7 +912,7 @@
 						'<div id="bodyContent">'+
 						'<p>&#34The &#39apparition&#39 of the digital bike augments the material rhetoric (car horns, screeching tires, speeding cars, etc.) of the city street, transforming the routine sights and sounds of a petroculture into signifiers of death.&#34</p>'+
 						'<p><a href="testpage.html#four">'+
-						'Take the scenic route</a> '+
+						'Take the detour</a> '+
 						'</p>'+
 						'</div>'+
 						'</div>'+
@@ -926,7 +926,7 @@
 					var markeraugmented = new google.maps.Marker({
 					  position: augmented,
 					  map: map,
-					  icon: 'images/phone.png',
+					  icon: 'images/detour2.png',
 					  title: 'Augmented Reality Criticism'
 					});
 					markeraugmented.addListener('click', function() {
@@ -946,7 +946,7 @@
 						'<div id="bodyContent">'+
 						'<p>&#34Public spaces are sustained as mundane through discourses of exception, or an unconscious disengagement from the rhetoricality of one’s environment.&#34</p>'+
 						'<p><a href="testpage.html#five">'+
-						'Take the scenic route</a> '+
+						'Take the detour/a> '+
 						'</p>'+
 						'</div>'+
 						'</div>'+
@@ -960,7 +960,7 @@
 					var markersocial = new google.maps.Marker({
 					  position: social,
 					  map: map,
-					  icon: 'images/phone.png',
+					  icon: 'images/detour2.png',
 					  title: 'Social Advocacy in Mundane Spaces'
 					});
 					markersocial.addListener('click', function() {
