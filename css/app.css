@@ -113,6 +113,7 @@
 .hero h1,
 .hero p {
     color: rgba(75,75,90, 1);
+    padding-top: 3em;
     /*width: 60%;*/
 }
 
@@ -120,11 +121,6 @@
     background-color: #fadd59;
     color: #1a1b23;
     font-size: 1em;    
-}
-
-.hero a:hover{
-    background-color: #ffea88;
-
 }
 
 /* Main Styles*/
@@ -262,5 +258,6 @@ footer .icon-button {
     .hero h1,
     .hero p {
         width: 100%;
+        padding-top: 0em;
     }
 }
