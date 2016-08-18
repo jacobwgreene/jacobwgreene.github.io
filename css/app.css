@@ -112,7 +112,7 @@
 
 .hero h1,
 .hero p {
-    color: rgba(75,75,90, 1);
+    color: rgba(0,0, 0, 1);
     padding-top: 3em;
     /*width: 60%;*/
 }
@@ -125,8 +125,17 @@
 
 /* Main Styles*/
 .main{
-    padding: 80px 0px;
+    padding: 0px 0px 80px 0px;
 }
+
+.main-research{
+    padding: 60px 0px 80px 0px;
+}
+
+.main-teaching{
+    padding: 60px 0px 80px 0px;
+}
+
 
 .main h1{
   font-family: 'Raleway', sans-serif;
@@ -135,7 +144,7 @@
 /* Footer Styles*/
 footer{
     background-image: url("../img/hero-pattern.png");
-    padding: 40px 0px;
+    padding: 50px 0px;
 }
 
 footer a{
@@ -215,6 +224,9 @@ footer .icon-button {
 .blogger span {
   background-color: #db5a3c; }
 
+.linkedin span {
+  background-color: #0274b3; }
+
 .icon-button .fi-social-twitter {
   color: #4099ff; }
 
@@ -224,7 +236,10 @@ footer .icon-button {
 .icon-button .fi-social-blogger {
   color: #db5a3c; }
 
-.icon-button:hover .fi-social-twitter, .icon-button:hover .fi-social-github, .icon-button:hover .fi-social-blogger {
+.icon-button .fi-social-linkedin {
+  color: #0274b3; }
+
+.icon-button:hover .fi-social-twitter, .icon-button:hover .fi-social-github, .icon-button:hover .fi-social-blogger, .icon-button:hover .fi-social-linkedin {
   color: white;
   font-size: 2.6rem;
   line-height: 3.9rem; }
