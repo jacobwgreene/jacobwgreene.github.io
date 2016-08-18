@@ -40,6 +40,10 @@
     padding-left: .2em;
 }
 
+.title-bar-title a{
+    color: #484845;
+}
+
 #mobile-menu{
     background-color: transparent;
     padding: 10px;
@@ -129,13 +133,16 @@
 }
 
 .main-research{
-    padding: 60px 0px 80px 0px;
+    padding: 30px 0px 80px 0px;
 }
 
 .main-teaching{
-    padding: 60px 0px 80px 0px;
+    padding: 30px 0px 80px 0px;
 }
 
+.main-cv{
+    padding: 30px 0px 80px 0px;
+}
 
 .main h1{
   font-family: 'Raleway', sans-serif;
