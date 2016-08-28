@@ -10,6 +10,7 @@
       <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet"><!--social icons -->
       <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"><!--fonts -->
       <link rel="icon" href="img/favicon.ico"> 
+      <script src="/js/vendor/modernizr.js"></script>
     </head>
     
     <body>
@@ -53,12 +54,37 @@
             <!-- Main section-->
             <section class="main main-research">
               <div class="wrap row">
-                <div class="small-12 medium-8 column">
-                  <h1>Research</h1>
-                  <hr>
+                <div class="small-12 medium-10 large-8 column">
                   <p>In 2015, over fifty-two percent of internet traffic took place within mobile devices, officially eclipsing the prior dominance of the traditional desktop interface. What are the rhetorical and compositional implications of this shift to mobile, ubqiquitous, and wearable computing?</p>
 
                   <p>In general, this question undergirds the majority of my research into emerging writing technologies such as augmented/mixed reality. Coming from the discipline of digtial rhetoric and composition studies, I am specifically interested in how these technologies are being configured rhetorically by both designers and users. To this end, I frequently write and teach about how mobile writing technologies can be leveraged to alter and/or subvert perceptions of a physical location, object, text, or image. In addition to my writing and teaching, my research into mobile augmented reality also takes a critical making approach, and in my time as the Augmented Reality Criticisms Coordinator for Trace Innovation, I have developed several mobile augmented reality applications. To learn more about my work in mobile AR with Trace, visit the <a href="https://trace.english.ufl.edu/projects/arcs/" target="_blank">Trace ARCs website</a>.</p>
+                </div>
+                <div class="small-12 medium-10 large-8 column">
+                  <h2>Recent Projects</h2>
+                  <hr>
+                  <ul class="accordion" data-accordion data-allow-all-closed="true">
+                    <li class="accordion-item" data-accordion-item>
+                      <a href="#" class="accordion-title">Super PAC Scramble</a>
+                      <div class="accordion-content" data-tab-content>
+                        <div class="video-container">
+                          <iframe width="560em" height="315em" src="https://www.youtube.com/embed/WJhDMu5t4GU" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        "Super PAC Scramble" is a single-player, mobile augmented reality game that educates players about monetary donations to the 2016 presidential election. Co-created by Jacob Greene and Melissa Bianchi, "Super PAC Scramble" is the first mobile AR app released through the TRace ARC series. You can download it for Android devices through <a href="https://play.google.com/store/apps/details?id=com.Trace.Dollars&hl=en" target="_blank">the Google Play store</a>.
+                      </div>
+                    </li>
+                    <li class="accordion-item" data-accordion-item>
+                      <a href="#" class="accordion-title">SeeWorld: Visualizing Animal Captivity Practices</a>
+                      <div class="accordion-content" data-tab-content>
+                        
+                      </div>
+                    </li>
+                    <li class="accordion-item" data-accordion-item>
+                      <a href="#" class="accordion-title">Articulating Detroit</a>
+                      <div class="accordion-content" data-tab-content>
+                        
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </section>
@@ -91,8 +117,13 @@
       
       <!--Javascript-->
       <script src="js/vendor/jquery.js"></script>
+      <script src="js/vendor/fastclick.js"></script>
       <script src="js/vendor/what-input.js"></script>
-      <script src="js/vendor/foundation.js"></script>            
+      <script src="js/vendor/foundation.min.js"></script>
+
+      <script>
+        $(document).foundation();
+      </script>
         
     </body>
   </html>
