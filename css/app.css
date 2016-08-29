@@ -150,6 +150,10 @@
     color: #1a1b23;
 }
 
+.accordion-item img{
+    padding-bottom: 1.2em;
+}
+
 .video-container {
   position:relative;
   padding-bottom:56.25%;
