@@ -136,11 +136,6 @@
     padding: 30px 0px 80px 0px;
 }
 
-/*Move Recent Project accordion to the left*/
-.column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
-    float: left;
-}
-
 .accordion-title{
     font-size: 1em;
     color: #1a1b23;
@@ -316,5 +311,8 @@ footer .icon-button {
     .hero p {
         width: 100%;
         padding-top: 0em;
+    }
+    .hero img{
+        padding-bottom: 1em;
     }
 }
