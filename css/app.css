@@ -15,7 +15,7 @@
 
 .off-canvas-wrapper{
     /*background-color: #fadd59;*/
-    background-image: url("../img/banner.png");
+    background-image: url("../img/banner.jpg");
     background-repeat: no-repeat;
 }
 
@@ -23,7 +23,7 @@
 
 .title-bar{
     background-color: #ffffff;
-    background-image: url("../img/banner.png");
+    background-image: url("../img/banner.jpg");
     height: 88px;
     padding-top: 17px;
 }
@@ -70,7 +70,7 @@
 
 /* Desktop Navigation Styles*/
 .nav-desktop{
-    background-image: url("../img/banner.png");
+    background-image: url("../img/banner.jpg");
     background-repeat: no-repeat;
     background-color: #ffffff;
     height: 88px;
