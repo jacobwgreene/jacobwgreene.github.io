@@ -158,7 +158,9 @@
 		color: #ffffff;
 		font-weight: 600;
 		line-height: 1.5;
-		margin: 0 0 1rem 0;		
+		margin: 0 0 1rem 0;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -167,14 +169,13 @@
 		}
 
 		h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
-			border-bottom: solid 1px #7e8e9c;
+			border-bottom: solid 1px #ffffff;
 			width: -moz-max-content;
 			width: -webkit-max-content;
 			width: -ms-max-content;
 			width: max-content;
 			padding-bottom: 0.5rem;
 			margin: 0 0 2rem 0;
-
 		}
 
 	h1 {
@@ -662,11 +663,7 @@
 		}
 
 			.image.main img {
-				width: 100%;
-			}
-
-			.image.intro img {
-				width: 80%;		
+				width: 75%;
 			}
 
 		@media screen and (max-width: 736px) {
