@@ -17,6 +17,7 @@
 
 h2{
   font-family: "Raleway";
+
 }
 
 /* Mobile Navigation Styles*/
@@ -336,7 +337,7 @@ footer .icon-button {
 @media print, screen and (min-width: 53em) {
   .article-row-content {
     padding: 0 0 0 1.5rem;
-  }
+  } 
 }
 
 @media print, screen and (min-width: 53em) {
@@ -377,6 +378,10 @@ footer .icon-button {
 }
 .banner p { 
     margin-left: 63px;
+}
+
+ .main-about div{
+     margin: 1.5em 0em 0em 0.5em;
 }
 }
 
@@ -419,6 +424,10 @@ footer .icon-button {
  .menu-icon{
   position: relative;
   bottom: -77px;
+ }
+
+ h2{
+  font-size: 2em;
  }
 }
 
