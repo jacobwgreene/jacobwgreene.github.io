@@ -421,10 +421,10 @@ footer .icon-button {
 .title-bar-left {
       margin-top: 46px;
     }
- .menu-icon{
+ /*.menu-icon{
   position: relative;
   bottom: -77px;
- }
+ }*/
 
  h2{
   font-size: 2em;
@@ -435,9 +435,9 @@ footer .icon-button {
     .title-bar-left {
       margin-top: 0px;
     }
-    .menu-icon{
+    /*.menu-icon{
   position: relative;
   bottom: -137px;
- }
+ }*/
 }
 
