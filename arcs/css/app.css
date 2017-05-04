@@ -50,8 +50,8 @@ h2{
 }
 
 .menu-icon:after{
-  background: #ffffff;
-  box-shadow: 0 7px 0 #ffffff, 0 14px 0 #ffffff;
+  background: #000000;
+  box-shadow: 0 7px 0 #000000, 0 14px 0 #000000;
 }
 
 .menu-icon a:hover{
@@ -72,6 +72,8 @@ h2{
 #mobile-menu a:hover{
     color: #424850;  
 }
+
+
 
 .js-off-canvas-exit{
     background: rgba(0, 0, 0, 0.25);
@@ -114,14 +116,11 @@ h2{
     color: #c3bebe;
 }
 
-/*Main styles*/
-
-.main-about {
- padding-bottom: 1em;
- font-family: 'Raleway';
- font-size: 1em;
- margin: 2.7em 0em 4em 9.7em;
+#current {
+  color: #c3bebe;
 }
+
+/*Main styles*/
 
 .main-projects {
   padding-bottom: 1em;
@@ -130,12 +129,33 @@ h2{
  margin: 2.7em 0em 4em 9.7em;
 }
 
+.main-about {
+ padding-bottom: 1em;
+ font-family: 'Raleway';
+ font-size: 1em;
+ margin: 2.7em 0em 4em 9.7em;
+}
+
+.main-tutorials {
+  padding-bottom: 1em;
+ font-family: 'Raleway';
+ font-size: 1em;
+ margin: 2.7em 0em 7em 9.7em;
+}
+
+.main-submissions {
+  padding-bottom: 1em;
+ font-family: 'Raleway';
+ font-size: 1em;
+ margin: 2.7em 0em 7em 9.7em;
+}
+
+/*Projects snippet styles*/
 .main-arc {
  padding-bottom: 1em;
  margin-top: 1.5em;
 }
 
-/*Recent Projects styles*/
 .article-row-section {
   max-width: 75rem;
   margin-right: auto;
@@ -415,6 +435,15 @@ footer .icon-button {
 .main-projects{
      margin: 1.5em 0em 0em 0.5em;
 }
+
+ .main-tutorials{
+     margin: 1.5em 0em 0em 0.5em;
+}
+
+ .main-submissions{
+     margin: 1.5em 0em 0em 0.5em;
+}
+
 }
 
 @media print, screen and (min-width: 53em) {
@@ -454,7 +483,7 @@ footer .icon-button {
       margin-top: 2.875em;
     }
     .top-bar, .top-bar ul {
-    display: none;
+    min-height: 1.3em;
 }
  /*.menu-icon{
   position: relative;
