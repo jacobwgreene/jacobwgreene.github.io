@@ -453,10 +453,13 @@ footer .icon-button {
 .title-bar-left {
       margin-top: 2.875em;
     }
- .menu-icon{
+    .top-bar, .top-bar ul {
+    display: none;
+}
+ /*.menu-icon{
   position: relative;
   bottom: -4.813em; 
- }
+ }*/
 
  h2{
   font-size: 2em;
@@ -467,12 +470,9 @@ footer .icon-button {
     .title-bar-left {
       margin-top: 0em;
     }
-    .menu-icon{
+/*    .menu-icon{
   position: relative;
   bottom: -8.25em;
- }
- .top-bar, .top-bar ul {
-    min-height: 2.8em;
-}
+ }*/ 
 }
 
