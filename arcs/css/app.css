@@ -98,7 +98,7 @@ h2{
 .top-bar, .top-bar ul{
   background-color:#000000;
   padding: 0;
-  min-height: 2.438em;
+  min-height: 2.6em;
 }
 
 .top-bar ul{
@@ -107,6 +107,7 @@ h2{
 
 .menu>li>a {
     color: #ffffff;
+    font-size: 1.1em;
 }
 
 .menu>li>a:hover {
