@@ -441,5 +441,8 @@ footer .icon-button {
   position: relative;
   bottom: -8.563em;
  }
+ .top-bar, .top-bar ul {
+    min-height: 2.8em;
+}
 }
 
