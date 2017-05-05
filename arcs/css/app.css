@@ -273,8 +273,6 @@ filter: drop-shadow(1px 1px 5px #999);
 /* Footer Styles*/
 footer{
     background-image: url("../img/lodyas_edit.png");
-
-
     padding: 1.25em 0em 1.25em 0em;
 }
 
@@ -283,9 +281,9 @@ footer p{
 }
 
 footer a{
-    display: block;
     color: #000000;
     font-size: 0.9em;
+
 }
 
 footer a:hover{
