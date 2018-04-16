@@ -275,7 +275,7 @@ It is helfpul to create a simple user interface (UI) that directs the user to th
 
 Next, navigate to the hierarchy panel and select "Create > UI > Image." Select the "2D" option in your scene view menu and center the image you just added by selecting it and clicking "F" on your keyboard. Click and drag the blue corners to center the image in your Canvas frame. Then, drag your book cover into the "Source Image" parameter in the inspector panel.
 
-{% include figure.html filename="revised-ar-dev-10.gif" caption="Select the 2D view in your scene menu and expand the Canvas image." %}
+![](images/revised-ar-dev-10.gif)
 
 Next, add some instructions to your UI by selecting "Create > UI > Text." In the inspector panel, write some instructions in the text field, such as "Scan this Image." Position your text box directly below your book cover and modify the font and color accordingly.
 
