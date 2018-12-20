@@ -499,6 +499,40 @@ h1, h2, h3, h4, h5, h6{
   font-family: 'Raleway', sans-serif;
 }
 
+/* Blog Styles*/
+
+.read-more-content,
+.read-more {
+  display: none;
+  margin-top: 1rem;
+}
+
+.read-more-content.expanded .read-more,
+.read-more.expanded .read-more {
+  display: block;
+}
+
+.callout {
+    border: none;
+    padding: 0rem;
+}
+
+.callout button {
+    padding: 1rem 0 0 0;
+    color:#257bb1;
+}
+
+.post-title h4{
+    color:#373b3e;
+}
+.post-content p{
+    color: black;
+}
+
+.post-content img{
+    padding: 0 0 1rem 0;
+}
+
 /* Footer Styles*/
 footer{
     background-image: url("../img/topography.jpg");
@@ -629,6 +663,14 @@ footer .icon-button {
 @media (max-width: 900px){    
     .menu > li > a{
         font-size: 1.2em;
+        padding-left: 0em;
+    }
+}
+
+@media (max-width: 710px){    
+    .menu > li > a{
+        font-size: 1.1em;
+      
     }
 }
 
