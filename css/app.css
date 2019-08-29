@@ -163,30 +163,40 @@
   color: #000000;
 }
 
-/* Course Sites*/
+/* Research Styles */
 
-.hero-full-screen {
-  height: 100vh;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background: url("../img/haboob.jpg") center center no-repeat;
-  background-size: cover;
-  position: relative;
-  bottom: 1.1em;
+.featured-image-block img{
+    height: 20em;
+    }
+
+.featured-image-block-grid-header {
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.featured-image-block {
+  margin-bottom: 20px;
+}
+
+.featured-image-block .featured-image-block-title {
+  font-weight: 600;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1em;
+  color: #404040;
+}
+
+.featured-image-block a:hover p {
+  color: #1779ba;
+}
+
+
+
+/* Course Sites*/
+
 .hero-full-screen-wrl {
-  height: 100vh;
+  height: 32vh;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -201,105 +211,44 @@
           justify-content: space-between;
   background: url("../img/wrlhero.jpg") center center no-repeat;
   background-size: cover;
-  position: relative;
-  bottom: 1.1em;
-}
-
-.hero-full-screen .middle-content-section {
-  text-align: center;
-  color: #fefefe;
-  padding-top: 15em;
 }
 
 .hero-full-screen-wrl .middle-content-section {
   text-align: center;
-  color: #000000;
-  padding-top: 15em;
+  color: #00000;
+  padding-top: 3em;
 }
 
-.hero-full-screen .middle-content-section h1 {
-  font-family: 'Raleway', sans-serif;
-}
-
-.hero-full-screen .content-section h2 {
-  font-family: 'Raleway', sans-serif;
-}
-
-.hero-full-screen .middle-content-section .button {
-    display: inline-block;
-    text-align: center;
-    line-height: 1;
-    cursor: pointer;
-    vertical-align: middle;
-    border: 1px solid transparent;
-    border-radius: 0;
-    padding: 0.85em 1em;
-    margin: 0 0 1rem 0;
-    font-size: 1.2rem;
-    background-color: #2199e8;
-    color: #fefefe;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-
-}
-
-.hero-full-screen .middle-content-section .button:hover{
-   background-color: #2d88c3;
-   color: white;
-
-}
-
-
-.hero-full-screen .top-content-section {
+.hero-full-screen-wrl .top-content-section {
   width: 100%;
 }
 
-.hero-full-screen .bottom-content-section {
-  padding: 1rem;
-  padding-bottom: 19rem;
-}
-
-.hero-full-screen-wrl .bottom-content-section {
-  padding: 1rem;
-  padding-bottom: 19rem;
-}
-
-.hero-full-screen .bottom-content-section svg {
-  height: 3.75rem;
-  width: 3.75rem;
-  fill: #fefefe;
-}
-
-.hero-full-screen-wrl .bottom-content-section svg {
-  height: 3.75rem;
-  width: 3.75rem;
-  fill: #fefefe;
-}
-
-.hero-full-screen .top-bar {
-  background: transparent;
-}
-
-.hero-full-screen .top-bar .menu {
-  background: transparent;
-}
-
-.hero-full-screen .top-bar .menu-text {
-  color: #fefefe;
-}
-
-.hero-full-screen .top-bar .menu li {
+.hero-full-screen-space {
+  height: 32vh;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: url("../img/haboob.jpg") center center no-repeat;
+  background-size: cover;
 }
 
-.hero-full-screen .top-bar .menu a {
-  color: #fefefe;
-  font-weight: bold;
+.hero-full-screen-space .middle-content-section {
+  text-align: center;
+  color: #eeeeee;
+  padding-top: 3em;
+}
+
+.hero-full-screen-space .top-content-section {
+  width: 100%;
 }
 
 /* General Styles*/
@@ -599,28 +548,108 @@ h1, h2, h3, h4, h5, h6{
 
 /* Test Blog Styles*/
 
-
-.featured-image-block-grid-header {
-  margin-left: auto;
-  margin-right: auto;
+.flip-card {
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  border: 0;
+  background: transparent;
 }
 
-.featured-image-block {
-  margin-bottom: 20px;
+.flip-card:hover .flip-card-inner,
+.flip-card.hover .flip-card-inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
-.featured-image-block .featured-image-block-title {
-  font-weight: 600;
-  margin-top: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 1em;
-  color: #404040;
+.flip-card,
+.flip-card-inner-front,
+.flip-card-inner-back {
+  width: 100%;
+  height: 20rem;
 }
 
-.featured-image-block a:hover p {
-  color: #1779ba;
+.flip-card-inner {
+  transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
+
+.flip-card-inner-front,
+.flip-card-inner-back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flip-card-inner-front {
+  background: url("../img/snapchatar.png") 0 0 no-repeat;
+  z-index: 2;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flip-card-inner-front.two{
+    background: url("../img/post2.jpg") 0 0 no-repeat;
+}
+
+.flip-card-inner-front.three{
+    background: url("../img/pokemon.png") 0 0 no-repeat;
+}
+
+.flip-card-inner-front.four{
+    background: url("../img/spacear.png") 0 0 no-repeat;
+}
+
+.flip-card-inner-front span {
+  width: 100%;
+  text-align: left;
+  background: rgba(254, 254, 254, 0.8);
+  padding: 0.25rem 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.flip-card-inner-back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  background: rgba(254, 254, 254, 0.8);
+  padding: 1rem;
+}
+
+.flip-card-inner-back-title {
+  font-weight: bold;
+}
+
+.flip-card-inner-back-text {
+  line-height: 1.3;
+}
+
+
 
 
 /* Footer Styles*/
